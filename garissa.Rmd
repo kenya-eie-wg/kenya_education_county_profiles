@@ -1,0 +1,359 @@
+---
+title: "Untitled"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: rows
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(readxl)
+library(sf)
+library(scales)
+library(patchwork)
+library(janitor)
+
+theme_set(theme_light())
+
+# Hopefully this allows the DT to show up
+options(htmltools.preserve.raw = FALSE)
+
+# disabling scientific notation
+options(scipen = 100)
+
+`%out%` <- Negate(`%in%`)
+
+# function for transposing df
+transpose_df <- function(df) {
+  t_df <- data.table::transpose(df)
+  colnames(t_df) <- rownames(df)
+  rownames(t_df) <- colnames(df)
+  t_df <- t_df %>%
+    tibble::rownames_to_column(.data = .) %>%
+    tibble::as_tibble(.)
+  return(t_df)
+}
+
+# scaling functions 
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}
+
+#mode function 
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+not_all_na <- function(x) any(!is.na(x))
+not_any_na <- function(x) all(!is.na(x))
+```
+
+```{r data}
+
+county <- read_csv("./data/garissa_county_20230622.csv")
+
+pcode1_shape <- 
+  sf::st_read("./data/ken_adm_iebc_20191031_shp/ken_admbnda_adm1_iebc_20191031.shp", 
+          quiet = TRUE) %>% 
+  clean_names()
+
+oos <- read_excel("./data/DataAnnexTables_OOSCI_KenyaFinal_2021.09.10.xlsx",
+           sheet = "OUTOFSCHOOLNUMBERSALLLEVLS", 
+           skip = 2) %>% 
+  janitor::clean_names() %>% 
+  rename(males_out_of_school_4_5_years = number_of_out_of_school_children_4_to_5_years_2, 
+         males_out_of_school_6_13_years = number_of_out_of_school_children_6_to_13_years_3, 
+         males_out_of_school_14_17_years = number_of_out_of_school_adolescents_14_to_17_years_4,
+         county = males, 
+         females_out_of_school_4_5_years = number_of_out_of_school_children_4_to_5_years_7, 
+         females_out_of_school_6_13_years = number_of_out_of_school_children_6_to_13_years_8,
+         females_out_of_school_14_17_years = number_of_out_of_school_adolescents_14_to_17_years_9,
+         admin_area = females) %>% 
+  mutate(female_total = females_out_of_school_4_5_years + females_out_of_school_6_13_years + 
+           females_out_of_school_14_17_years, 
+         male_total = males_out_of_school_4_5_years + males_out_of_school_6_13_years + 
+           males_out_of_school_14_17_years, 
+         oos_total = female_total + male_total)
+
+locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
+                      sheet = "ADM1") %>% 
+  clean_names()
+
+pre_enrol <- read_csv("./data/table_export_a.csv") %>% 
+  clean_names() %>% 
+  filter(county != "National") %>% 
+  mutate(county = recode(county, 
+                         "Elgeyo Marakwet" = "Elgeyo-Marakwet", 
+                         "Tharaka Nithi" = "Tharaka-Nithi",
+                         "Nairobi City" = "Nairobi")) %>% 
+  left_join(locations %>% select(county = adm1_en, 
+                                 adm1_pcode))
+
+```
+
+
+Row {data-height=300}
+-----------------------------------------------------------------------
+
+### Key figures for the county
+
+```{r}
+pie_chart <- function(tbl){
+  
+  tbl %>% 
+    mutate(prop = value / sum(value)) %>%
+    mutate(label = str_to_title(sex_modifier)) %>% 
+    ggplot(aes(x ="", y = prop, fill = sex_modifier)) + 
+    geom_col(width = 1, colour = "white") + 
+    coord_polar("y", start = 0) + 
+    theme_void() + 
+    geom_label(aes(y = prop, 
+                   label = paste0(label, "\n", 
+                                  comma(value), 
+                                  "\n", 
+                                  percent(prop, accuracy = .1))), 
+               colour = "white", 
+               position = position_stack(vjust = .5), 
+               size = 5) + 
+    scale_fill_manual(values = c("#443983", "#35b779")) +
+    theme(legend.position = "none", 
+        plot.title = element_text(size = 12), 
+        plot.subtitle = element_text(size = 30,
+                                     colour = "#5370BF"))
+}
+```
+
+```{r fig.width=15}
+
+county %>% 
+  filter(str_detect(indicator, "County Population") & 
+           sex_modifier != "total") %>% 
+  pie_chart() +
+  labs(title = "County population", 
+       subtitle = paste0(county %>%
+                           filter(indicator == "County Population" &
+                                    sex_modifier == "total" &
+                                    age_modifier == "total") %>%
+                           pull(value) %>%
+                           format(big.mark = ","))) +
+  
+county %>% 
+  filter(str_detect(indicator, "School-age children") & 
+           sex_modifier != "total") %>% 
+  pie_chart() +
+  labs(title = "School-age children (4-17 years)", 
+       subtitle = paste0(county %>%
+                           filter(indicator == "School-age children" &
+                                    sex_modifier == "total" &
+                                    age_modifier == "total") %>%
+                           pull(value) %>%
+                           format(big.mark = ","))) +
+county %>% 
+  filter(str_detect(indicator, "Out-of-school") & 
+           age_modifier == "preprimary_ece" & 
+           sex_modifier != "total") %>% 
+  pie_chart() + 
+  labs(title = "Out-of-school \nPreprimary/ECE (4-5) years", 
+       subtitle = paste0(county %>%
+                           filter(str_detect(indicator, "Out-of-school") &
+                                    sex_modifier == "total" &
+                                    age_modifier == "preprimary_ece") %>%
+                           pull(value) %>%
+                           format(big.mark = ","))) + 
+county %>% 
+  filter(str_detect(indicator, "Out-of-school") & 
+           age_modifier == "primary" & 
+           sex_modifier != "total") %>% 
+  pie_chart() + 
+  labs(title = "Out-of-school \nPrimary (6-13) years", 
+       subtitle = paste0(county %>%
+                           filter(str_detect(indicator, "Out-of-school") &
+                                    sex_modifier == "total" &
+                                    age_modifier == "primary") %>%
+                           pull(value) %>%
+                           format(big.mark = ","))) + 
+county %>% 
+  filter(str_detect(indicator, "Out-of-school") & 
+           age_modifier == "secondary" & 
+           sex_modifier != "total") %>% 
+  pie_chart() + 
+  labs(title = "Out-of-school \nSecondary (14-17) years", 
+       subtitle = paste0(county %>%
+                           filter(str_detect(indicator, "Out-of-school") &
+                                    sex_modifier == "total" &
+                                    age_modifier == "secondary") %>%
+                           pull(value) %>%
+                           format(big.mark = ","))) + 
+plot_layout(nrow = 1)
+  
+
+  
+```
+
+Row {data-height=700}
+-----------------------------------------------------------------------
+
+### Education Indicators
+
+```{r }
+
+county %>% 
+  filter(str_detect(indicator, "Net")
+                  & sex_modifier == "total") %>% 
+  mutate(age_modifier = ifelse(all_values == "P.:111.2%,", "preprimary_ece", age_modifier), 
+         value = ifelse(all_values == "P.:111.2%,", 111.2, value)) %>% 
+  mutate(age_modifier = fct_relevel(age_modifier, 
+                                    c("secondary",
+                                      "primary",
+                                      "preprimary_ece"
+                                      ))) %>% 
+  arrange(age_modifier) %>% 
+  ggplot(aes(x = value, 
+             y = age_modifier, 
+             fill = geography)) + 
+  geom_col(position = position_dodge()) + 
+  geom_text(aes(label = value), position = position_dodge(width = .9), 
+            hjust = "inward") + 
+  scale_fill_manual(values = c("#7ad151", "#277f8e")) + 
+  labs(x = "", y = "", 
+       title = "Net Enrolment Rate", 
+       fill = "") + 
+  scale_x_continuous(labels = percent) + 
+  theme(legend.position = "bottom", 
+        plot.caption = element_text(hjust = 0.5)) + 
+
+county %>% 
+  filter(str_detect(indicator, "Classroom")
+                  & sex_modifier == "total") %>% 
+  mutate(age_modifier = fct_relevel(age_modifier, 
+                                    c("secondary",
+                                      "primary",
+                                      "preprimary_ece"
+                                      ))) %>% 
+  arrange(age_modifier) %>% 
+  ggplot(aes(x = value, 
+             y = age_modifier, 
+             fill = geography)) + 
+  geom_col(position = position_dodge()) + 
+  geom_text(aes(label = value), position = position_dodge(width = .9), 
+            hjust = "inward") + 
+  scale_fill_manual(values = c("#7ad151", "#277f8e")) + 
+  labs(x = "Learner-to-classroom ratio",
+       y = "",
+       title = "Learner-Classroom ratio", 
+       fill = "") +  
+  theme(legend.position = "bottom", 
+        axis.text.y = element_blank(), 
+        plot.caption = element_text(hjust = 0.5)) + 
+
+  plot_layout(guides = "collect") & 
+  theme(legend.position = "bottom")
+```
+
+
+### Map of preprimary/ECE enrolment
+
+```{r}
+pre_enrol %>% 
+  right_join(pcode1_shape, by = "adm1_pcode") %>% 
+  st_as_sf() %>% 
+  ggplot() + 
+  geom_sf(size = .1, colour = "grey70", 
+          aes(fill = all)) + 
+  geom_sf_text(aes(label = adm1_en), 
+               size = 2, 
+               check_overlap = TRUE, 
+               colour = "grey80") + 
+  scale_fill_viridis_c() + 
+  # Maybe just get the centroids programmatically
+  geom_point(y = -0.373620, x = 40.189796, colour = "red", size = 3, pch = 18) + 
+  theme_void() + 
+  labs(title = "Enrolment - preprimary/ECE", 
+       fill = "enrolment")
+```
+
+
+```{r eval = FALSE}
+pcode1_shape %>% 
+  st_as_sf() %>% 
+  mutate(is_county = ifelse(adm1_en == "Garissa", 
+                            "Garissa", 
+                            "Other counties")) %>% 
+  ggplot() + 
+  geom_sf(size = .1, colour = "grey70", 
+          aes(fill = is_county)) + 
+  geom_sf_text(aes(label = adm1_en), 
+               size = 3, 
+               check_overlap = TRUE) + 
+  theme_void() + 
+  scale_fill_manual(values = c("orange", "grey")) + 
+  theme(legend.position = "none") 
+```
+
+
+
+
+### Education Indicators
+
+```{r}
+county %>% 
+  filter(str_detect(indicator, "water") & 
+           sex_modifier == "total" & 
+           !str_detect(age_modifier, "national_average")) %>% 
+  mutate(value = value / 100) %>% 
+  mutate(age_modifier = fct_relevel(age_modifier, 
+                                    c("secondary",
+                                      "primary",
+                                      "preprimary_ece"
+                                      ))) %>%
+  arrange(age_modifier) %>% 
+  ggplot(aes(x = value, 
+             y = age_modifier, 
+             fill = geography)) + 
+  geom_col(position = position_dodge(), 
+           fill = "#7ad151") + 
+  geom_text(aes(label = percent(value, accuracy = .1)), 
+            position = position_dodge(width = .9), 
+            hjust = "inward") + 
+  labs(x = "", y = "", 
+       title = "% students no access to \nimproved water source", 
+       fill = "") + 
+  scale_x_continuous(labels = percent) + 
+  theme(legend.position = "none", 
+        plot.caption = element_text(hjust = 0.5)) + 
+
+county %>% 
+  filter(str_detect(indicator, "institutions") & county != "National") %>% 
+  mutate(age_modifier = fct_relevel(age_modifier, 
+                                    c("secondary",
+                                      "primary",
+                                      "preprimary_ece"
+                                      ))) %>% 
+  arrange(age_modifier) %>% 
+  ggplot(aes(x = value, 
+             y = age_modifier)) + 
+  geom_col(fill = "#7ad151") + 
+  geom_text(aes(label = value), 
+            hjust = "inward") + 
+  labs(x = "", y = "", 
+       title = "No. of education institutions") + 
+  theme(axis.text.y = element_blank(), 
+        legend.position = "none")  
+  
+
+
+```
+
+
+
+
+
+
+
+
+
+
+

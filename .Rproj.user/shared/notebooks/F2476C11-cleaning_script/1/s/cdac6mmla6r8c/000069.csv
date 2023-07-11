@@ -1,0 +1,6 @@
+"0","county_name <- (read_xlsx(""./data/county_profiles_raw.xlsx"", 
+                         sheet = 1) %>% 
+  names())[1] %>% 
+  {str_replace_all(., "" County- Education Profile"", """")}
+"
+"2","New names:"

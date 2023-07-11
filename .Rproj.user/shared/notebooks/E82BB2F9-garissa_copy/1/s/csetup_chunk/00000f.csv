@@ -1,0 +1,65 @@
+"0","library(flexdashboard)"
+"0","library(tidyverse)"
+"0","library(viridis)"
+"2","Loading required package: viridisLite
+"
+"0","library(readxl)"
+"0","library(sf)"
+"2","Linking to GEOS 3.10.2, GDAL 3.4.1, PROJ 7.2.1; sf_use_s2() is TRUE
+"
+"0","library(scales)"
+"2","
+Attaching package: ‘scales’
+
+"
+"2","The following object is masked from ‘package:viridis’:
+
+    viridis_pal
+
+"
+"2","The following object is masked from ‘package:purrr’:
+
+    discard
+
+"
+"2","The following object is masked from ‘package:readr’:
+
+    col_factor
+
+"
+"0","library(patchwork)"
+"0","library(janitor)"
+"0",""
+"0","theme_set(theme_light())"
+"0",""
+"0","# Hopefully this allows the DT to show up"
+"0","options(htmltools.preserve.raw = FALSE)"
+"0",""
+"0","# disabling scientific notation"
+"0","options(scipen = 100)"
+"0",""
+"0","`%out%` <- Negate(`%in%`)"
+"0",""
+"0","# function for transposing df"
+"0","transpose_df <- function(df) {"
+"0","  t_df <- data.table::transpose(df)"
+"0","  colnames(t_df) <- rownames(df)"
+"0","  rownames(t_df) <- colnames(df)"
+"0","  t_df <- t_df %>%"
+"0","    tibble::rownames_to_column(.data = .) %>%"
+"0","    tibble::as_tibble(.)"
+"0","  return(t_df)"
+"0","}"
+"0",""
+"0","# scaling functions "
+"0","range01 <- function(x){(x-min(x))/(max(x)-min(x))}"
+"0","range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}"
+"0",""
+"0","#mode function "
+"0","mode <- function(x) {"
+"0","  ux <- unique(x)"
+"0","  ux[which.max(tabulate(match(x, ux)))]"
+"0","}"
+"0",""
+"0","not_all_na <- function(x) any(!is.na(x))"
+"0","not_any_na <- function(x) all(!is.na(x))"

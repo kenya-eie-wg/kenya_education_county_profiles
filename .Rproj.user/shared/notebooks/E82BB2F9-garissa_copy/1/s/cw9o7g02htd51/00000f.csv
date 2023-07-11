@@ -1,0 +1,19 @@
+"0","oos <- read_excel(""./data/DataAnnexTables_OOSCI_KenyaFinal_2021.09.10.xlsx"",
+           sheet = ""OUTOFSCHOOLNUMBERSALLLEVLS"", 
+           skip = 2) %>% 
+  janitor::clean_names() %>% 
+  rename(males_out_of_school_4_5_years = number_of_out_of_school_children_4_to_5_years_2, 
+         males_out_of_school_6_13_years = number_of_out_of_school_children_6_to_13_years_3, 
+         males_out_of_school_14_17_years = number_of_out_of_school_adolescents_14_to_17_years_4,
+         county = males, 
+         females_out_of_school_4_5_years = number_of_out_of_school_children_4_to_5_years_7, 
+         females_out_of_school_6_13_years = number_of_out_of_school_children_6_to_13_years_8,
+         females_out_of_school_14_17_years = number_of_out_of_school_adolescents_14_to_17_years_9,
+         admin_area = females) %>% 
+  mutate(female_total = females_out_of_school_4_5_years + females_out_of_school_6_13_years + 
+           females_out_of_school_14_17_years, 
+         male_total = males_out_of_school_4_5_years + males_out_of_school_6_13_years + 
+           males_out_of_school_14_17_years, 
+         oos_total = female_total + male_total)
+"
+"2","New names:"

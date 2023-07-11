@@ -1,0 +1,90 @@
+indicator,sex_modifier,age_modifier,value,all_values,county
+county_population_females,female,total,161431,161431,Isiolo
+county_population_males,male,total,154506,154506,Isiolo
+county_population_total,total,total,315937,315937,Isiolo
+school_age_children_females,female,total,60018,60018,Isiolo
+school_age_children_males,male,total,57625,57625,Isiolo
+school_age_children_total,total,total,117643,117643,Isiolo
+out_of_school_preprimary_ece_females,female,primary,3860,3860,Isiolo
+out_of_school_preprimary_ece_males,male,primary,4630,4630,Isiolo
+out_of_school_preprimary_ece_total,total,primary,8490,8490,Isiolo
+out_of_school_primary_females,female,primary,10150,10150,Isiolo
+out_of_school_primary_males,male,primary,11930,11930,Isiolo
+out_of_school_primary_total,total,primary,22080,22080,Isiolo
+out_of_school_secondary_females,female,secondary,4260,4260,Isiolo
+out_of_school_secondary_males,male,secondary,7030,7030,Isiolo
+out_of_school_secondary_total,total,secondary,11290,11290,Isiolo
+Number of education Institutions,total,preprimary_ece,249,249,Isiolo
+Number of education Institutions,total,primary,160,160,Isiolo
+Number of education Institutions,total,secondary,35,35,Isiolo
+Number of education Institutions,total,national_average,NA,"NA",National
+Gender Parity Index,total,preprimary_ece,1.05,1.05,Isiolo
+Gender Parity Index,total,primary,1.08,1.08,Isiolo
+Gender Parity Index,total,secondary,0.98,0.98,Isiolo
+Gender Parity Index,total,national_average,NA,"PP: 0.97,",National
+Learner to teacher Ratio,total,preprimary_ece,39,39,Isiolo
+Learner to teacher Ratio,total,primary,28,28,Isiolo
+Learner to teacher Ratio,total,secondary,19,19,Isiolo
+Learner to teacher Ratio,total,national_average,NA,"PP: 43, P: 40, S: 29",National
+Learner-Classroom Ratio,total,preprimary_ece,64,64,Isiolo
+Learner-Classroom Ratio,total,primary,33,33,Isiolo
+Learner-Classroom Ratio,total,secondary,30,30,Isiolo
+Learner-Classroom Ratio,total,national_average,NA,"PP: 53, P: 37, S: 40",National
+Percentage of students with no access to improved water source,total,preprimary_ece,42.3,42.3,Isiolo
+Percentage of students with no access to improved water source,total,primary,42.3,42.3,Isiolo
+Percentage of students with no access to improved water source,total,secondary,15.06,15.06,Isiolo
+Percentage of students with no access to improved water source,total,national_average,NA,"NA",National
+Enrolment (Year 2022 Term 2),female,primary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),male,primary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),total,primary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),female,primary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),male,primary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),total,primary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),female,secondary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),male,secondary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),total,secondary,NA,Not available,Isiolo
+Enrolment (Year 2022 Term 2),total,total,NA,"NA",Isiolo
+Enrolment (Year 2022 Term 3),female,primary,5662,5662,Isiolo
+Enrolment (Year 2022 Term 3),male,primary,5872,5872,Isiolo
+Enrolment (Year 2022 Term 3),total,primary,11534,11534,Isiolo
+Enrolment (Year 2022 Term 3),female,primary,16520,16520,Isiolo
+Enrolment (Year 2022 Term 3),male,primary,15515,15515,Isiolo
+Enrolment (Year 2022 Term 3),total,primary,32035,32035,Isiolo
+Enrolment (Year 2022 Term 3),female,secondary,4134,4134,Isiolo
+Enrolment (Year 2022 Term 3),male,secondary,3769,3769,Isiolo
+Enrolment (Year 2022 Term 3),total,secondary,7903,7903,Isiolo
+Enrolment (Year 2022 Term 3),total,total,NA,"NA",Isiolo
+Net Enrolment Rate,female,primary,64.1,64.099999999999994,Isiolo
+Net Enrolment Rate,male,primary,68.6,68.599999999999994,Isiolo
+Net Enrolment Rate,total,primary,66.4,66.4,Isiolo
+Net Enrolment Rate,female,primary,43,43,Isiolo
+Net Enrolment Rate,male,primary,45,45,Isiolo
+Net Enrolment Rate,total,primary,44,44,Isiolo
+Net Enrolment Rate,female,secondary,29.6,29.6,Isiolo
+Net Enrolment Rate,male,secondary,30.4,30.4,Isiolo
+Net Enrolment Rate,total,secondary,30,30,Isiolo
+Net Enrolment Rate,total,total,NA,"P.:111.2%,",Isiolo
+Primary-to-Secondary Transition Rate,female,primary,NA,NA,Isiolo
+Primary-to-Secondary Transition Rate,male,primary,NA,NA,Isiolo
+Primary-to-Secondary Transition Rate,total,primary,NA,NA,Isiolo
+Primary-to-Secondary Transition Rate,female,primary,NA,NA,Isiolo
+Primary-to-Secondary Transition Rate,male,primary,NA,NA,Isiolo
+Primary-to-Secondary Transition Rate,total,primary,NA,NA,Isiolo
+Primary-to-Secondary Transition Rate,female,secondary,67.5,67.5,Isiolo
+Primary-to-Secondary Transition Rate,male,secondary,74,74,Isiolo
+Primary-to-Secondary Transition Rate,total,secondary,70.4,70.400000000000006,Isiolo
+Primary-to-Secondary Transition Rate,total,total,NA,"B: 87.1, F: 87.2,",Isiolo
+Learner to Toilet Ratio,female,primary,78,78,Isiolo
+Learner to Toilet Ratio,male,primary,76,76,Isiolo
+Learner to Toilet Ratio,total,primary,77,77,Isiolo
+Learner to Toilet Ratio,female,primary,30,30,Isiolo
+Learner to Toilet Ratio,male,primary,30,30,Isiolo
+Learner to Toilet Ratio,total,primary,30,30,Isiolo
+Learner to Toilet Ratio,female,secondary,18,18,Isiolo
+Learner to Toilet Ratio,male,secondary,19,19,Isiolo
+Learner to Toilet Ratio,total,secondary,18.5,18.5,Isiolo
+Learner to Toilet Ratio,total,total,NA,"PP.: (B: 40, F: 34) P: (B: 31, F: 28)",Isiolo
+Percentage of Teenage Pregnancy for girls/women aged 15-19 yrs who have ever been pregnant in Isolo County,female,total,0.167,0.167,Isiolo
+GBV: Percentage of girls/women who have experienced physical violence since age 15 in Isolo County,female,total,0.456,0.456,Isiolo
+GBV: Percentage of girls/women aged 15-49 yrs who have ever experienced sexual violence in Isolo County,female,total,0.092,0.092,Isiolo
+FGM: Percentage of women aged 15-49 yrs who were ever circumcised across Kenya,female,total,0.148,0.148,Isiolo

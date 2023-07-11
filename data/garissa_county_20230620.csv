@@ -1,0 +1,96 @@
+indicator,sex_modifier,age_modifier,value,geography,all_values,county
+county_population_females,female,total,468506,county,468506,Garissa
+county_population_males,male,total,458525,county,458525,Garissa
+county_population_total,total,total,927031,county,927031,Garissa
+school_age_children_females,female,total,170548,county,170548,Garissa
+school_age_children_males,male,total,163146,county,163146,Garissa
+school_age_children_total,total,total,333694,county,333694,Garissa
+out_of_school_preprimary_ece_females,female,primary,22980,county,22980,Garissa
+out_of_school_preprimary_ece_males,male,primary,27050,county,27050,Garissa
+out_of_school_preprimary_ece_total,total,primary,50030,county,50030,Garissa
+out_of_school_primary_females,female,primary,75910,county,75910,Garissa
+out_of_school_primary_males,male,primary,90100,county,90100,Garissa
+out_of_school_primary_total,total,primary,166010,county,166010,Garissa
+out_of_school_secondary_females,female,secondary,28540,county,28540,Garissa
+out_of_school_secondary_males,male,secondary,44830,county,44830,Garissa
+out_of_school_secondary_total,total,secondary,73370,county,73370,Garissa
+Number of education institutions,total,preprimary_ece,410,county,410,Garissa
+Number of education institutions,total,primary,322,county,322,Garissa
+Number of education institutions,total,secondary,68,county,68,Garissa
+Number of education institutions,total,national_average,NA,national,NA,National
+Gender Parity Index,total,preprimary_ece,0.81,county,0.81,Garissa
+Gender Parity Index,total,primary,0.73,county,0.73,Garissa
+Gender Parity Index,total,secondary,0.6799999999999999,county,0.68,Garissa
+Gender Parity Index,total,preprimary_ece,0.97,national,PP: 0.97,Garissa
+Gender Parity Index,total,primary,0.96,national, P: 0.96,Garissa
+Gender Parity Index,total,secondary,1.01,national, S: 1.01,Garissa
+Learner to teacher Ratio,total,preprimary_ece,56,county,56,Garissa
+Learner to teacher Ratio,total,primary,81,county,81,Garissa
+Learner to teacher Ratio,total,secondary,30,county,30,Garissa
+Learner to teacher Ratio,total,preprimary_ece,43,national,PP: 43,Garissa
+Learner to teacher Ratio,total,primary,40,national, P: 40,Garissa
+Learner to teacher Ratio,total,secondary,29,national, S: 29,Garissa
+Learner-Classroom Ratio,total,preprimary_ece,48,county,48,Garissa
+Learner-Classroom Ratio,total,primary,33,county,33,Garissa
+Learner-Classroom Ratio,total,secondary,35,county,35,Garissa
+Learner-Classroom Ratio,total,preprimary_ece,53,national,PP: 53,Garissa
+Learner-Classroom Ratio,total,primary,37,national, P: 37,Garissa
+Learner-Classroom Ratio,total,secondary,40,national, S: 40,Garissa
+Percentage of students with no access to improved water source,total,preprimary_ece,44.17,county,44.17,Garissa
+Percentage of students with no access to improved water source,total,primary,44.17,county,44.17,Garissa
+Percentage of students with no access to improved water source,total,secondary,22.279999999999998,county,22.28,Garissa
+Percentage of students with no access to improved water source,total,national_average,NA,national,NA,National
+Enrolment 2022 Term 2,female,preprimary_ece,6624,county,6624,Garissa
+Enrolment 2022 Term 2,male,preprimary_ece,8715,county,8715,Garissa
+Enrolment 2022 Term 2,total,preprimary_ece,15339,county,15339,Garissa
+Enrolment 2022 Term 2,female,primary,24873,county,24873,Garissa
+Enrolment 2022 Term 2,male,primary,31540,county,31540,Garissa
+Enrolment 2022 Term 2,total,primary,56413,county,56413,Garissa
+Enrolment 2022 Term 2,female,secondary,5644,county,5644,Garissa
+Enrolment 2022 Term 2,male,secondary,7887,county,7887,Garissa
+Enrolment 2022 Term 2,total,secondary,13531,county,13531,Garissa
+Enrolment 2022 Term 2,total,national_average,NA,national,NA,National
+(Year 2022 Term 2),total,national_average,NA,national,NA,National
+Enrolment 2022 Term 3,female,preprimary_ece,6845,county,6845,Garissa
+Enrolment 2022 Term 3,male,preprimary_ece,8775,county,8775,Garissa
+Enrolment 2022 Term 3,total,preprimary_ece,15620,county,15620,Garissa
+Enrolment 2022 Term 3,female,primary,25172,county,25172,Garissa
+Enrolment 2022 Term 3,male,primary,31941,county,31941,Garissa
+Enrolment 2022 Term 3,total,primary,57113,county,57113,Garissa
+Enrolment 2022 Term 3,female,secondary,5723,county,5723,Garissa
+Enrolment 2022 Term 3,male,secondary,7993,county,7993,Garissa
+Enrolment 2022 Term 3,total,secondary,13716,county,13716,Garissa
+Enrolment 2022 Term 3,total,national_average,NA,national,NA,National
+(Year 2022 Term 3),total,national_average,NA,national,NA,National
+Net Enrolment Rate,female,preprimary_ece,52.7,county,52.7,Garissa
+Net Enrolment Rate,male,preprimary_ece,60.1,county,60.1,Garissa
+Net Enrolment Rate,total,preprimary_ece,56.5,county,56.5,Garissa
+Net Enrolment Rate,female,primary,25.6,county,25.6,Garissa
+Net Enrolment Rate,male,primary,27.6,county,27.6,Garissa
+Net Enrolment Rate,total,primary,26.7,county,26.7,Garissa
+Net Enrolment Rate,female,secondary,11.3,county,11.3,Garissa
+Net Enrolment Rate,male,secondary,9,county,9,Garissa
+Net Enrolment Rate,total,secondary,9.9,county,9.9,Garissa
+Net Enrolment Rate,total,primary,NA,national,"P.:111.2%,",Garissa
+Net Enrolment Rate,total,primary,78.1,national,"P: 78.1%,",Garissa
+Net Enrolment Rate,total,secondary,54.1,national,S: 54.1%,Garissa
+Primary-to-Secondary Transition Rate,female,secondary,86.4,county,86.4,Garissa
+Primary-to-Secondary Transition Rate,male,secondary,84.8,county,84.8,Garissa
+Primary-to-Secondary Transition Rate,total,secondary,85.4,county,85.4,Garissa
+Primary-to-Secondary Transition Rate,total,national_average,87.1,national,"B: 87.1, F: 87.2,",National
+Primary-to-Secondary Transition Rate,total,national_average,87.1,national,T: 87.1,National
+Learner to Toilet Ratio,female,preprimary_ece,56,county,56,Garissa
+Learner to Toilet Ratio,male,preprimary_ece,68,county,68,Garissa
+Learner to Toilet Ratio,total,preprimary_ece,62,county,62,Garissa
+Learner to Toilet Ratio,female,primary,35,county,35,Garissa
+Learner to Toilet Ratio,male,primary,49,county,49,Garissa
+Learner to Toilet Ratio,total,primary,42,county,42,Garissa
+Learner to Toilet Ratio,female,secondary,26,county,26,Garissa
+Learner to Toilet Ratio,male,secondary,23,county,23,Garissa
+Learner to Toilet Ratio,total,secondary,24.5,county,24.5,Garissa
+Learner to Toilet Ratio,total,preprimary_ece,NA,national,"PP.: (B: 40, F: 34) P: (B: 31, F: 28)",Garissa
+Learner to Toilet Ratio,total,secondary,22,national,"S: (B: 22, F: 18)",Garissa
+Percentage of Teenage Pregnancy for girls/women aged 15-19 yrs who have ever been pregnant in Garissa County,female,total,0.14800000000000002,county,0.14799999999999999,Garissa
+GBV: Percentage of girls/women who have experienced physical violence since age 15 in Garissa County,female,total,0.21000000000000002,county,0.21,Garissa
+GBV: Percentage of girls/women aged 15-49 yrs who have ever experienced sexual violence in Garissa County,female,total,0.05800000000000001,county,5.8000000000000003E-2,Garissa
+FGM: Percentage of women aged 15-49 yrs who were ever circumcised across Kenya,female,total,0.14800000000000002,county,0.14799999999999999,Garissa
