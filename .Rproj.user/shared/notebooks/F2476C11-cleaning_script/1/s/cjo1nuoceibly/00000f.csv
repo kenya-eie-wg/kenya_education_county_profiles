@@ -1,0 +1,9 @@
+"0",""
+"0",""
+"0","county_name <- (read_xlsx(""./data/county_profiles_raw.xlsx"", "
+"0","                         sheet = i) %>%"
+"0","                    names())[i] %>%"
+"0","  {str_replace_all(., "" County- Education Profile"", """")}"
+"2","Error in standardise_sheet(sheet, range, sheets_fun(path)) : 
+  object 'i' not found
+"

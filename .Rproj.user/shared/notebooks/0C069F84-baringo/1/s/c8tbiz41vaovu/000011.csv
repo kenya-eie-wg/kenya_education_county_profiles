@@ -1,0 +1,53 @@
+"0","counties %>%
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Learner to teacher"")) %>%
+  group_by(age_modifier, county) %>% 
+  summarise(value = sum(value, na.rm = TRUE), .groups = ""drop"") %>% 
+  make_dodged_plot() + 
+  labs(x = """", y = """", 
+       title = ""Learner-to-Teacher Ratio"", 
+       fill = """") +
+
+
+counties %>%
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Classroom"")) %>% 
+  make_dodged_plot() + 
+  labs(x = """", y = """", 
+       title = ""Learner-to-Classroom Ratio"", 
+       fill = """") + 
+
+counties %>%
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Learner to Toilet"")) %>%
+  group_by(age_modifier, county) %>% 
+  summarise(value = sum(value, na.rm = TRUE),
+            .groups = ""drop"") %>% 
+  make_dodged_plot() + 
+  labs(x = """", y = """", 
+       title = ""Learner-to-Toilet Ratio"", 
+       fill = """") + 
+  
+
+gridExtra::tableGrob(
+  counties %>%
+    filter(county %in% c(county_selection, ""national"")) %>% 
+    filter(str_detect(indicator, ""improved water source"") | str_detect(indicator, ""no water source""))  %>%
+    select(indicator, value) %>% 
+    mutate(indicator = str_wrap(indicator, 30)) %>% 
+    select_all(~ str_to_title(.)) %>%
+    rename(`Water in schools` = Indicator, 
+           ` ` = Value)) 
+"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `county = fct_relevel(county, c(""national"", county_selection))`.[39m
+Caused by warning:
+[33m![39m [38;5;238m1 unknown level in `f`: national[39m"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `county = fct_relevel(county, c(""national"", county_selection))`.[39m
+Caused by warning:
+[33m![39m [38;5;238m1 unknown level in `f`: national[39m"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `county = fct_relevel(county, c(""national"", county_selection))`.[39m
+Caused by warning:
+[33m![39m [38;5;238m1 unknown level in `f`: national[39m"

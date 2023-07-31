@@ -1,0 +1,44 @@
+"0","read_xlsx(""./data/county_profiles_raw.xlsx"",
+              sheet = 10, skip = 14) %>%
+      slice(1:26) %>%  
+      setNames(
+        c(""indicator"", 
+      ""preprimary_ece_female"", 
+      ""preprimary_ece_male"", 
+      ""preprimary_ece_total"", 
+      ""primary_female"", 
+      ""primary_male"", 
+      ""primary_total"", 
+      ""secondary_female"", 
+      ""secondary_male"", 
+      ""secondary_total"", 
+      ""national_average"")
+      ) %>% 
+      select(-national_average) %>% 
+      mutate_at(vars(indicator), ~ str_trim(str_squish(.))) %>% 
+      mutate_at(vars(indicator), 
+                ~ gsub(""\\[.*?\\]"", """", .)) %>% 
+      filter(!is.na(indicator) & !str_detect(indicator, ""WASH in"")) %>% 
+      pivot_longer(cols = c(preprimary_ece_female:secondary_total), 
+                     names_to = ""modifier"", 
+                     values_to = ""value"") %>% 
+      filter(
+        indicator %in% c(""Net Enrolment Rate (NER)"", 
+                         ""Students’ dropout /Absenteeism during"", 
+                         ""Primary-to-Secondary Transition Rate"")| 
+          str_detect(indicator, ""Learner to Toilet""))  %>% 
+      mutate(indicator = recode(indicator, 
+                                ""Students’ dropout /Absenteeism during"" =
+                                  ""Students' dropout/Absenteeism during 2022"")) %>% 
+      distinct(indicator, modifier, value) %>% 
+      mutate(sex_modifier = case_when(str_detect(modifier, ""female"") ~ ""female"", 
+                                      str_detect(modifier, ""male"") ~ ""male"", 
+                                      str_detect(modifier, ""total"") ~ ""total""), 
+             age_modifier = case_when(str_detect(modifier, ""preprimary_ece"") ~ ""preprimary_ece"", 
+                                      str_detect(modifier, ""primary"") ~ ""primary"", 
+                                      str_detect(modifier, ""secondary"") ~ ""secondary""), 
+             value = as.numeric(value)) %>% 
+      select(-modifier) %>%
+      filter(!is.na(value))
+"
+"2","New names:"

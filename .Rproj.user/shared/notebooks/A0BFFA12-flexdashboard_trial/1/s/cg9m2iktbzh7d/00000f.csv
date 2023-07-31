@@ -1,0 +1,65 @@
+"0","(counties %>% 
+  mutate(indicator = str_replace_all(indicator, ""education Institutions"", ""Education Institutions"")) %>% 
+  filter(county %in% c(county_selection)) %>% 
+  filter(str_detect(indicator, ""Number of Education Institutions"")) %>% 
+  mutate(age_modifier = str_to_title(age_modifier),
+         age_modifier = str_replace_all(age_modifier, ""Preprimary_ece"", ""Pre-primary\n/ECE"")) %>%
+  mutate(age_modifier = fct_relevel(age_modifier, c(""Secondary"",
+                                                      ""Primary"",
+                                                      ""Pre-primary\n/ECE""))) %>% 
+  ggplot(aes(x = value, y = age_modifier)) + 
+  geom_col(fill = ""#2b54ad"", width = .5) +
+  geom_text(aes(label = value), 
+            hjust = 1, 
+            colour = ""white"") + 
+  theme(panel.background = element_rect(""#f4f4f4"")) +
+  labs(subtitle = ""Education Institutions"", 
+       title = ""Education Indicators"",
+       y = """", x = ""Number of institutions"") +
+
+counties %>% 
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Gender Parity"")) %>% 
+  make_dodged_plot() +
+  labs(subtitle = ""Gender Parity Index"", 
+       y = """", x = ""Gender parity index"", fill = """")) /  
+
+  
+(counties %>% 
+  filter(county %in% c(county_selection)) %>%
+  filter(indicator == ""Students' dropout/Absenteeism during 2022"" & sex_modifier != ""total"") %>% 
+  mutate(age_modifier = str_to_title(age_modifier),
+         age_modifier = str_replace_all(age_modifier, ""Preprimary_ece"", ""Pre-primary\n/ECE"")) %>%
+  mutate(age_modifier = fct_relevel(age_modifier, c(""Secondary"",
+                                                      ""Primary"",
+                                                      ""Pre-primary\n/ECE""))) %>% 
+  ggplot(aes(x = value, y = age_modifier, fill = sex_modifier)) +
+    geom_col(position = position_dodge()) + 
+    geom_text(aes(label = value), position = position_dodge(width = .9), 
+              hjust = -1, colour = ""white"", size = 3) + 
+    scale_fill_manual(values = c(""#002021"", ""#19686a"")) + 
+    theme(legend.position = ""top"", 
+          axis.text.y = element_text(size = 10), 
+          panel.background = element_rect(""#f4f4f4""), 
+          legend.text = element_text(size = 3), 
+          plot.title = element_text(size = 12)) + 
+    guides(fill = guide_legend(override.aes = list(size = 0.3))) +
+  labs(subtitle = ""Dropouts/Absenteeism in 2022"", 
+       x = ""Number of children"", y = """", 
+       fill =  ""Sex"") +
+
+counties %>% 
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Net Enrolment"") & sex_modifier == ""total"") %>% 
+  make_dodged_plot() +
+  labs(subtitle = ""Net Enrolment Rate 2020 [8]"", 
+       y = """", x = ""Net enrolment rate"", fill = """"))
+"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `county = fct_relevel(county, c(""national"", county_selection))`.[39m
+Caused by warning:
+[33m![39m [38;5;238m1 unknown level in `f`: national[39m"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `county = fct_relevel(county, c(""national"", county_selection))`.[39m
+Caused by warning:
+[33m![39m [38;5;238m1 unknown level in `f`: national[39m"

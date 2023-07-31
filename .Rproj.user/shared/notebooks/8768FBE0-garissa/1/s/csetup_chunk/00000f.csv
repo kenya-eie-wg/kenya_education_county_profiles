@@ -1,17 +1,6 @@
 "0","library(flexdashboard)"
 "0","library(tidyverse)"
 "0","library(viridis)"
-"2","Loading required package: viridisLite
-"
-"2","
-Attaching package: ‘viridis’
-
-"
-"2","The following object is masked from ‘package:scales’:
-
-    viridis_pal
-
-"
 "0","library(readxl)"
 "0","library(sf)"
 "0","library(scales)"
