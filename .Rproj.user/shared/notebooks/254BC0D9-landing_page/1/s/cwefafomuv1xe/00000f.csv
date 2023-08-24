@@ -1,0 +1,21 @@
+"0","line_data <- counties %>% 
+  filter(indicator == ""Net Enrolment Rate (NER)"" | 
+           indicator == ""Learner-Classroom Ratio in Public Schools"") %>% 
+  filter(sex_modifier == ""total"") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename(""net_enrolment_rate"" = ""Net Enrolment Rate (NER)"", 
+         ""learner_classroom_ratio"" = ""Learner-Classroom Ratio in Public Schools"") %>% 
+  filter(county != ""National"") %>%
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == ""preprimary_ece"", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         )  %>% 
+  filter(county != ""Turkana"" | age_modifier != ""preprimary_ece"") %>% 
+  filter(!is.na(learner_classroom_lag)) %>% 
+  mutate(age_modifier = str_to_title(age_modifier)) %>% 
+ 
+```
+"
+"2","Error: attempt to use zero-length variable name
+"

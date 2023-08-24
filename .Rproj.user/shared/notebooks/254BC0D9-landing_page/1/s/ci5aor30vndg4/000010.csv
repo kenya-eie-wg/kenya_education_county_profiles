@@ -1,0 +1,7 @@
+"0","learner_classroom_table %>% 
+  filter(age_modifier == ""primary"") %>% pull(estimate) %>% round(digits = 2)
+"
+"1","[1]"
+"1"," -0.88"
+"1","
+"

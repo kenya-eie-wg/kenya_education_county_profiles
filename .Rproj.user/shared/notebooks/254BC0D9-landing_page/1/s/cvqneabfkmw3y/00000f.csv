@@ -1,0 +1,21 @@
+"0",""
+"0","locations <- read_xlsx(""./data/ken_adminboundaries_tabulardata.xlsx"", "
+"0","                      sheet = ""ADM1"") %>% "
+"0","  clean_names()"
+"0",""
+"0","pcode1_shape <- "
+"0","  sf::st_read(""./data/ken_adm_iebc_20191031_shp/ken_admbnda_adm1_iebc_20191031.shp"", "
+"0","          quiet = TRUE) %>% "
+"0","  clean_names()"
+"0",""
+"0","counties <- read_csv(""./data/counties.csv"") %>% "
+"0","  mutate(sex_modifier = fct_relevel(sex_modifier, c(""male"", ""female"", ""total"")), "
+"0","         county = recode(county, ""national"" = ""National""))"
+"2","[1mRows: [22m[34m902[39m [1mColumns: [22m[34m5[39m"
+"2","[36m--[39m [1mColumn specification[22m [36m----------------------------------------------------------------------------------[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (4): indicator, age_modifier, sex_modifier, county
+[32mdbl[39m (1): value"
+"2","
+[36mi[39m Use `spec()` to retrieve the full column specification for this data.
+[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

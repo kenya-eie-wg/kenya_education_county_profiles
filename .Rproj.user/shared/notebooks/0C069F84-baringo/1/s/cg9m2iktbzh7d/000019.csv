@@ -1,0 +1,70 @@
+"0","(counties %>% 
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Net Enrolment"") & sex_modifier == ""total"") %>% 
+  make_dodged_plot() +
+  labs(subtitle = expression(paste(""Net Enrolment Rate 202"", ""0""^8)), 
+       y = """", x = ""Net enrolment rate"", fill = """") +
+   theme(plot.margin = margin(0, 0, 0, 10, ""pt"")) +
+   
+counties %>% 
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Gender Parity"")) %>% 
+  make_dodged_plot() +
+  labs(subtitle = ""Gender Parity Index"", 
+       y = """", x = ""Gender parity index"", fill = """") + 
+  theme(plot.margin = margin(0, 0, 0, 10, ""pt"")))  / 
+
+(counties %>% 
+  filter(county %in% c(county_selection)) %>%
+  filter(indicator == ""Students' dropout/Absenteeism during 2022"" & sex_modifier != ""total"") %>% 
+  mutate(age_modifier = str_to_title(age_modifier),
+         sex_modifier = str_to_title(sex_modifier), 
+         age_modifier = str_replace_all(age_modifier, ""Preprimary_ece"", ""Pre-primary\n/ECE"")) %>%
+  mutate(age_modifier = fct_relevel(age_modifier, c(""Secondary"",
+                                                      ""Primary"",
+                                                      ""Pre-primary\n/ECE""))) %>% 
+  ggplot(aes(x = value, y = age_modifier, fill = sex_modifier)) +
+    geom_col(position = position_dodge()) + 
+    geom_text(aes(label = value), position = position_dodge(width = .9), 
+              hjust = 1, colour = ""white"", size = 3) + 
+    scale_fill_manual(values = c(""#002021"", ""#19686a"")) + 
+    theme(legend.position = ""top"", 
+          axis.text.y = element_text(size = 10), 
+          panel.background = element_rect(""#f4f4f4""), 
+          legend.text = element_text(size = 5), 
+          plot.title = element_text(size = 15)) + 
+    guides(fill = guide_legend(override.aes = list(size = 0.3))) +
+  labs(subtitle = expression(paste(""Dropouts/Absenteeism in 202"", ""2""^6)),
+       x = ""Number of children"", y = """", 
+       fill =  """") + 
+   
+counties %>% 
+  filter(county %in% c(county_selection, ""National"")) %>% 
+  filter(str_detect(indicator, ""Primary-to-Secondary"")) %>% 
+  mutate(sex_modifier = str_to_title(sex_modifier)) %>% 
+  mutate(sex_modifier = fct_relevel(sex_modifier, ""Total"", ""Female"", ""Male"")) %>% 
+  arrange(sex_modifier) %>% 
+  ggplot(aes(x = value, y = fct_rev(sex_modifier), fill = fct_rev(county))) + 
+  geom_col(position = position_dodge()) + 
+  geom_text(aes(label = value), position = position_dodge(width = .9), 
+            hjust = 1, colour = ""white"", size = 5) +
+  scale_fill_manual(values = c(""#2b54ad"", ""#5d90d3""), 
+                      breaks = c(county_selection, ""National"")) + 
+  theme(legend.position = ""top"",  
+          panel.background = element_rect(""#f4f4f4""), 
+          legend.text = element_text(size = 5), 
+          plot.title = element_text(size = 15)) + 
+    guides(fill = guide_legend(override.aes = list(size = 0.3))) + 
+  labs(x =  ""Primary-to-secondary transition rate"", 
+       y = """", 
+       title = ""Primary-to-Secondary Transition Rate"", 
+       fill = """"))
+"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `county = fct_relevel(county, c(""national"", county_selection))`.[39m
+Caused by warning:
+[33m![39m [38;5;238m1 unknown level in `f`: national[39m"
+"2","Warning: [38;5;238mThere was 1 warning in `mutate()`.[39m
+[38;5;238m[36mi[38;5;238m In argument: `county = fct_relevel(county, c(""national"", county_selection))`.[39m
+Caused by warning:
+[33m![39m [38;5;238m1 unknown level in `f`: national[39m"

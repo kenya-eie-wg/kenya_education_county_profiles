@@ -111,3 +111,59 @@ county %>%
   
   plot_layout(guides = "collect") & 
   theme(legend.position = "bottom")
+
+
+read_excel("./data/ocr_tables/enrolment_boys_grade1_6_public_primary_schools.xlsx") %>% 
+  clean_names() %>% 
+  select_all(~gsub("class", "grade", .)) %>% 
+  pivot_longer(cols = grade_1:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(public_private = "public", 
+         sex_modifier = "boys", 
+         age_modifier = "primary",
+         grade = ifelse(str_detect(grade, "total"), "primary_total", grade), 
+         grade = paste0(grade, "_", sex_modifier), 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier)), 
+
+read_excel("./data/ocr_tables/enrolment_girls_grade1_6_public_primary_schools.xlsx") %>% 
+  clean_names() %>% 
+  select_all(~gsub("class", "grade", .)) %>% 
+  pivot_longer(cols = grade_1:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(public_private = "public", 
+         sex_modifier = "girls", 
+         age_modifier = "primary",
+         grade = ifelse(str_detect(grade, "total"), "primary_total", grade), 
+         grade = paste0(grade, "_", sex_modifier), 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier)), 
+
+
+read_excel("./data/ocr_tables/enrolment_boys_grade1_6_private_primary_schools.xlsx") %>% 
+  clean_names() %>% 
+  select_all(~gsub("class", "grade", .)) %>% 
+  pivot_longer(cols = grade_1:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(public_private = "private", 
+         sex_modifier = "boys", 
+         age_modifier = "primary",
+         grade = ifelse(str_detect(grade, "total"), "primary_total", grade), 
+         grade = ifelse(str_detect(grade, "total") & sex_modifier == "total", 
+                        "primary_total", grade), 
+         grade = paste0(grade, "_", sex_modifier), 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier)),
+
+read_excel("./data/ocr_tables/enrolment_girls_grade1_6_private_primary_schools.xlsx") %>% 
+  clean_names() %>% 
+  select_all(~gsub("class", "grade", .)) %>% 
+  pivot_longer(cols = grade_1:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(public_private = "private", 
+         sex_modifier = "girls", 
+         age_modifier = "primary",
+         grade = ifelse(str_detect(grade, "total"), "primary_total", grade), 
+         grade = paste0(grade, "_", sex_modifier), 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier))

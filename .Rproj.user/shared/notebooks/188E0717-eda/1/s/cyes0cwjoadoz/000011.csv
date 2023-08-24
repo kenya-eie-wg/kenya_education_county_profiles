@@ -1,0 +1,14 @@
+"0","read_excel(""./data/ocr_tables/enrolment_grade_7_8_public_lower_secondary.xlsx"") %>% 
+  setNames(lower_secondary_names) %>% 
+  slice(2:49) %>% 
+  pivot_longer(cols = grade_7_boys:lower_secondary_total, 
+              names_to = ""grade"", 
+              values_to = ""enrolment"") %>% 
+  mutate(public_private = ""public"", 
+         age_modifier = ""primary"",
+         sex_modifier = case_when(str_detect(grade, ""boys"") ~ ""boys"", 
+                                  str_detect(grade, ""girls"") ~ ""girls"", 
+                                  str_detect(grade, ""total"") ~ ""total"")) %>% 
+  arrange(county)
+"
+"2","New names:"

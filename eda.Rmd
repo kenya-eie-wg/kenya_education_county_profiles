@@ -1,0 +1,779 @@
+---
+title: "Untitled"
+output: html_document
+date: '2023-08-14'
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(tidyverse)
+library(viridis)
+library(readxl)
+library(sf)
+library(scales)
+library(patchwork)
+library(janitor)
+library(flextable)
+library(grid)
+library(png)
+library(cowplot)
+library(ggpubr)
+library(ggtext)
+library(tidytext)
+library(tidymodels)
+library(vip)
+library(broom)
+library(ggrepel)
+library(ggforce)
+
+theme_set(theme_light())
+
+# Hopefully this allows the DT to show up
+options(htmltools.preserve.raw = FALSE)
+
+# disabling scientific notation
+options(scipen = 100)
+
+`%out%` <- Negate(`%in%`)
+
+# function for transposing df
+transpose_df <- function(df) {
+  t_df <- data.table::transpose(df)
+  colnames(t_df) <- rownames(df)
+  rownames(t_df) <- colnames(df)
+  t_df <- t_df %>%
+    tibble::rownames_to_column(.data = .) %>%
+    tibble::as_tibble(.)
+  return(t_df)
+}
+
+# scaling functions 
+range01 <- function(x){(x-min(x))/(max(x)-min(x))}
+range_wna <- function(x){(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))}
+
+#mode function 
+mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+
+not_all_na <- function(x) any(!is.na(x))
+not_any_na <- function(x) all(!is.na(x))
+```
+
+```{r data}
+
+locations <- read_xlsx("./data/ken_adminboundaries_tabulardata.xlsx", 
+                      sheet = "ADM1") %>% 
+  clean_names()
+
+pcode1_shape <- 
+  sf::st_read("./data/ken_adm_iebc_20191031_shp/ken_admbnda_adm1_iebc_20191031.shp", 
+          quiet = TRUE) %>% 
+  clean_names()
+
+counties <- read_csv("./data/counties.csv") %>% 
+  mutate(sex_modifier = fct_relevel(sex_modifier, c("male", "female", "total")), 
+         county = recode(county, "national" = "National"))
+
+
+```
+
+
+
+
+# EDA
+
+```{r}
+learner_teacher_sort <- counties %>% filter(str_detect(indicator, "Learner to teacher") & 
+                                              age_modifier == "preprimary_ece") %>% 
+  arrange((value)) %>% 
+  pull(county)
+
+counties %>% filter(str_detect(indicator, "Learner to teacher")) %>%
+  mutate(county = fct_relevel(county, learner_teacher_sort)) %>% 
+  ggplot(aes(x = value, y = county)) + 
+  geom_col(aes(fill = value)) + 
+  scale_fill_viridis(option = "cividis", trans = "log")  + 
+  scale_y_reordered() + 
+  facet_row(vars(age_modifier), scales = "free_x", space = "free") + 
+  theme(legend.position = "none") +
+  
+  labs(x = "Learner to teacher ratio", 
+       y = "", 
+       title = "Learner to teacher ratios")
+```
+
+```{r}
+
+```
+
+
+```{r}
+population_sort_order <- counties %>%
+  filter(indicator %in% c("county_population", "school_age_children") & 
+           sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, 
+              values_from = value) %>% 
+  mutate(pc = school_age_children / county_population * 100) %>% 
+  arrange(desc(school_age_children)) %>% 
+  pull(county)
+
+
+counties %>%
+  filter(indicator %in% c("county_population", "school_age_children") & 
+           sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, 
+              values_from = value) %>% 
+  mutate(pc = school_age_children / county_population * 100) %>% 
+  ggplot(aes(x = school_age_children, y = fct_rev(fct_relevel(county, population_sort_order)), fill = pc)) + 
+  geom_col() + 
+  geom_text(aes(label = comma(school_age_children)), 
+            colour = "grey20", 
+            size = 4, 
+            hjust = "inward") +
+  scale_fill_viridis(begin = .3, direction = -1) + 
+  scale_x_continuous(labels = comma) + 
+  labs(x = "School-aged children", 
+       y = "", 
+       fill = "% of county\npopulation", 
+       title = "Number of school-aged children") + 
+  theme(legend.title = element_text(size = 8))
+  
+```
+
+```{r fig.height = 9}
+
+sort_order <- counties %>% 
+  filter(indicator %in% c("Net Enrolment Rate (NER)") & sex_modifier == "total" & 
+           age_modifier == "secondary") %>% 
+  group_by(county, age_modifier) %>% 
+  mutate(sort_value = sum(value)) %>% 
+  arrange((sort_value)) %>% 
+  pull(county)
+
+counties %>% 
+  filter(indicator %in% c("Net Enrolment Rate (NER)") & sex_modifier != "total") %>%
+  mutate(age_modifier = recode(age_modifier, 
+                               "preprimary_ece" = "Pre-primary/ECE", 
+                               "primary" = "Primary", 
+                               "secondary" = "Secondary")) %>% 
+  ggplot(aes(x = value, 
+             y = fct_relevel(county, 
+                             sort_order), 
+             fill = sex_modifier)) + 
+  geom_col(position = position_dodge()) + 
+  geom_text(aes(label = value), 
+            colour = "white", 
+            hjust = 1, 
+            position = position_dodge(width = .9)) + 
+  facet_wrap(~ age_modifier) + 
+  labs(x = "Net Enrolment Rate", 
+       y = "", 
+       title = "Net Enrolment Rate", 
+       subtitle = "2020 Basic Education Statistical Book, (K MoE).",
+       fill = "") + 
+  scale_fill_manual(values = c("#440154", "#1fa187"), 
+                    guide = guide_legend(reverse = TRUE)) + 
+  theme(strip.text = element_text(size = 8, face = "bold"),
+        strip.background = element_rect(fill = "#212121"), 
+        legend.position = "top")
+  
+```
+
+
+<br>
+
+```{r fig.retina=2, fig.width=9}
+
+counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county != "National") %>%
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         ) %>% 
+  filter(!is.na(learner_classroom_lag))  %>% 
+  ggplot(aes(x = learner_classroom_lag, 
+             y = net_enrolment_rate)) + 
+  geom_smooth(method = "lm", 
+              fill = "lightblue", 
+              data = line_data) +
+  geom_point() + 
+  geom_rect(aes(xmin = 45, xmax = 180, 
+                ymin = 23, ymax = 60), 
+            fill = "transparent", colour = "gold", 
+            size = .2) + 
+  geom_rect(aes(xmin = 28, xmax = 45, 
+                ymin = 5, ymax = 22), 
+            fill = "transparent", colour = "red", 
+            size = .2) +
+  geom_text_repel(aes(label = paste0(county, ", ", str_to_title(str_sub(age_modifier, 1, 3)))), 
+                  size = 2)  + 
+  scale_x_log10() +
+  labs(x = "Learner-classroom ratio of previous education level", 
+       y = "Net enrolment rate", 
+       title = "Higher learner-classroom ratios correlated with lower net enrolment", 
+       subtitle = "Data from 2020 Basic Education Statistical Book, (K MoE)", 
+       caption = "Turkana preprimary enrolment excluded because it is an outlier.") + 
+  theme(plot.caption = element_text(hjust = .5, size = ))
+```
+
+
+Turkana has the second-highest preprimary enrolment rates, but simultaneously one of the lowest secondary enrolment rates. 
+
+```{r}
+counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county %out% c("National")) %>%
+  filter(county != "Turkana" | age_modifier != "preprimary_ece") %>% 
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         ) %>%
+  filter(!is.na(learner_classroom_lag)) %>% 
+  group_by(age_modifier) %>% 
+  do(tidy(lm(data = ., formula = net_enrolment_rate ~ learner_classroom_lag))) %>% 
+  filter(term != "(Intercept)")
+```
+
+```{r}
+line_data <- counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county != "National") %>%
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         )  %>% 
+  filter(county != "Turkana" | age_modifier != "preprimary_ece")
+ 
+```
+
+
+```{r fig.retina=2, fig.width=9}
+counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county != "National") %>%
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         ) %>% 
+  # filter(!is.na(learner_classroom_lag))  %>% 
+  ggplot(aes(x = learner_classroom_ratio, 
+             y = net_enrolment_rate)) + 
+  geom_smooth(method = "lm", 
+              fill = "lightblue", 
+              data = line_data) +
+  geom_point() + 
+  geom_text_repel(aes(label = county), 
+                  size = 2)  + 
+  scale_x_log10() + 
+  scale_y_log10() + 
+  facet_wrap(~age_modifier, scales = "free") + 
+  labs(x = "Learner-classroom ratio of previous education level", 
+       y = "Net enrolment rate", 
+       title = "Higher learner-classroom ratios correlated with lower net enrolment ", 
+       subtitle = "Data from 2020 Basic Education Statistical Book, (K MoE)", 
+       caption = "Turkana preprimary enrolment excluded because it is an outlier.") + 
+  theme(plot.caption = element_text(hjust = .5, size = ))
+```
+
+```{r}
+counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county %out% c("National")) %>%
+  filter(county != "Turkana" | age_modifier != "preprimary_ece") %>% 
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         ) %>%
+  group_by(age_modifier) %>% 
+  do(tidy(lm(data = ., formula = net_enrolment_rate ~ learner_classroom_ratio))) %>% 
+  filter(term != "(Intercept)")
+```
+
+```{r}
+counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county %out% c("National")) %>%
+  filter(county != "Turkana" | age_modifier != "preprimary_ece") %>% 
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         ) %>%
+  filter(!is.na(learner_classroom_lag)) %>% 
+  group_by(age_modifier) %>% 
+  do(tidy(lm(data = ., formula = net_enrolment_rate ~ learner_classroom_lag))) %>% 
+  filter(term != "(Intercept)")
+```
+
+
+```{r}
+counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county != "National") %>%
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         ) %>% 
+  # filter(!is.na(learner_classroom_lag)) %>% 
+  select(-sex_modifier) %>% 
+  lm(net_enrolment_rate ~ learner_classroom_ratio, data = .) %>% 
+  summary()
+```
+
+
+
+# Model 
+
+Too few points for a model 
+
+```{r}
+set.seed(123)
+
+
+
+classroom_df <- counties %>% 
+  filter(indicator == "Net Enrolment Rate (NER)" | 
+           indicator == "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(sex_modifier == "total") %>% 
+  pivot_wider(names_from = indicator, values_from = value) %>% 
+  rename("net_enrolment_rate" = "Net Enrolment Rate (NER)", 
+         "learner_classroom_ratio" = "Learner-Classroom Ratio in Public Schools") %>% 
+  filter(county != "National") %>%
+  mutate(learner_classroom_lag = lag(learner_classroom_ratio), 
+         learner_classroom_lag = ifelse(age_modifier == "preprimary_ece", 
+                                        NA_integer_, 
+                                        learner_classroom_lag), 
+         ) %>% 
+  filter(!is.na(learner_classroom_lag)) %>% 
+  select(-sex_modifier)
+
+classroom_split <- initial_split(classroom_df, strata = age_modifier)
+
+train <- training(classroom_split)
+
+test <- testing(classroom_split)
+
+test %>% 
+  group_by(age_modifier) %>% 
+  do(tidy(lm(data = ., formula = net_enrolment_rate ~ learner_classroom_lag))) %>% 
+  filter(term != "(Intercept)")
+
+
+```
+
+
+
+```{r}
+train %>% 
+  ggplot(aes(x = learner_classroom_ratio, 
+             y = net_enrolment_rate)) + 
+  geom_point() +
+  geom_smooth(method = "lm")
+```
+
+
+
+# Cleaning from OCR tables
+
+```{r}
+file_list <- list.files(path = "./data/ocr_tables", 
+                        recursive = TRUE, 
+                        pattern = "\\.xlsx$", 
+                        full.names = TRUE) 
+```
+
+```{r}
+read_excel("./data/ocr_tables/enrolment_public_preprimary.xlsx") %>% 
+  clean_names() %>% 
+  pivot_longer(cols = pp1_boys:total, 
+               names_to = "grade", 
+               values_to = "value") %>% 
+  mutate(sex_modifier = case_when(str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls", 
+                                  str_detect(grade, "total") ~ "total"), 
+         public_private = "public")
+```
+```{r}
+read_excel("./data/ocr_tables/enrolment_public_preprimary.xlsx") %>% 
+  clean_names() %>% 
+  pivot_longer(cols = pp1_boys:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(sex_modifier = case_when(str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls", 
+                                  str_detect(grade, "total") ~ "total"), 
+         public_private = "public") %>% 
+  mutate(grade = str_replace_all(grade, "pp", "preprimary"), 
+         grade = recode(grade, 
+                        "total_boys" = "preprimary_boys", 
+                        "total_girls" = "preprimary_girls",
+                        "total" = "preprimary_total"))
+
+read_excel("./data/ocr_tables/enrolment_boys_grade1_6_public_primary_schools.xlsx") %>% 
+  clean_names() %>% 
+  select_all(~gsub("class", "grade", .)) %>% 
+  pivot_longer(cols = grade_1:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(public_private = "public", 
+         sex_modifier = "boys", 
+         grade = ifelse(str_detect(grade, "total"), "primary_total", grade), 
+         grade = paste0(grade, "_", sex_modifier), 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", grade))
+```
+
+```{r}
+primary_enrolments <- function(tbl){
+  tbl %>% 
+  clean_names() %>% 
+  select_all(~gsub("class", "grade", .)) %>% 
+  pivot_longer(cols = grade_1:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(age_modifier = "primary",
+         grade = ifelse(str_detect(grade, "total"), "primary_total", grade))
+}
+
+lower_secondary_names <- c("county", "grade_7_boys", "grade_7_girls", "grade_7_total",
+                           "grade_8_boys", "grade_8_girls", "grade_8_total", 
+                           "lower_secondary_total_boys", "lower_secondary_total_girls", 
+                           "lower_secondary_total")
+
+
+```
+
+
+## Enrolments
+
+```{r}
+
+
+enrolment <- rbind(
+# Preprimary enrolments
+read_excel("./data/ocr_tables/enrolment_public_preprimary.xlsx") %>% 
+  clean_names() %>% 
+  pivot_longer(cols = pp1_boys:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(sex_modifier = case_when(str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls", 
+                                  str_detect(grade, "total") ~ "total"), 
+          age_modifier = "preprimary",
+         public_private = "public") %>% 
+  mutate(grade = str_replace_all(grade, "pp", "preprimary"), 
+         grade = recode(grade, 
+                        "total_boys" = "preprimary_total_boys", 
+                        "total_girls" = "preprimary_total_girls",
+                        "total" = "preprimary_total")),
+
+read_excel("./data/ocr_tables/enrolment_private_preprimary.xlsx") %>% 
+  setNames(c("county", "pp1_boys", "pp1_girls", "pp1_total", 
+             "pp2_boys", "pp2_girls", "pp2_total", 
+             "total_boys", "total_girls", "total")) %>% 
+  slice(2:48) %>% 
+  pivot_longer(cols = pp1_boys:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(sex_modifier = case_when(str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls", 
+                                  str_detect(grade, "total") ~ "total"), 
+         age_modifier = "preprimary", 
+         public_private = "private") %>% 
+  mutate(grade = str_replace_all(grade, "pp", "preprimary"),
+         grade = recode(grade, 
+                        "total_boys" = "preprimary_total_boys", 
+                        "total_girls" = "preprimary_total_girls",
+                        "total" = "preprimary_total")),
+         
+# Primary enrolments 
+
+read_excel("./data/ocr_tables/enrolment_boys_grade1_6_public_primary_schools.xlsx") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = "public", 
+         sex_modifier = "boys", 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier), 
+         grade = paste0(grade, "_", sex_modifier)), 
+
+read_excel("./data/ocr_tables/enrolment_girls_grade1_6_public_primary_schools.xlsx") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = "public", 
+         sex_modifier = "girls", 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier), 
+         grade = paste0(grade, "_", sex_modifier)), 
+
+read_excel("./data/ocr_tables/enrolment_boys_grade1_6_private_primary_schools.xlsx") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = "private", 
+         sex_modifier = "boys", 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier), 
+         grade = paste0(grade, "_", sex_modifier)), 
+
+read_excel("./data/ocr_tables/enrolment_girls_grade1_6_private_primary_schools.xlsx") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = "private", 
+         sex_modifier = "girls", 
+         sex_modifier = ifelse(str_detect(grade, "primary_total"), "total", sex_modifier), 
+         grade = paste0(grade, "_", sex_modifier)), 
+
+
+# Lower secondary enrolments 
+read_excel("./data/ocr_tables/enrolment_grade_7_8_public_lower_secondary.xlsx") %>% 
+  setNames(lower_secondary_names) %>% 
+  slice(2:49) %>% 
+  pivot_longer(cols = grade_7_boys:lower_secondary_total, 
+              names_to = "grade", 
+              values_to = "enrolment") %>% 
+  mutate(public_private = "public", 
+         age_modifier = "primary",
+         sex_modifier = case_when(str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls", 
+                                  str_detect(grade, "total") ~ "total")), 
+
+read_excel("./data/ocr_tables/enrolment_grade_7_8_private_lower_secondary.xlsx") %>% 
+  setNames(lower_secondary_names) %>% 
+  slice(2:49) %>% 
+  pivot_longer(cols = grade_7_boys:lower_secondary_total, 
+              names_to = "grade", 
+              values_to = "enrolment") %>% 
+  mutate(public_private = "private", 
+         age_modifier = "primary",
+         sex_modifier = case_when(str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls", 
+                                  str_detect(grade, "total") ~ "total")),         
+# Secondary enrolments
+read_excel("./data/ocr_tables/enrolment_public_secondary.xlsx") %>% 
+  clean_names() %>%
+  pivot_longer(cols = form_1_boys:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+   mutate(grade = str_replace_all(grade, "form_", "form"), 
+         age_modifier = "secondary",
+         sex_modifier = case_when(str_detect(grade, "total") ~ "total",
+                                  str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls"), 
+         public_private = "public",
+         grade = ifelse(str_detect(grade, "total") & !str_detect(grade, "_"), 
+                        "secondary_total", 
+                        grade)),
+
+read_excel("./data/ocr_tables/enrolment_private_secondary.xlsx") %>% 
+  clean_names() %>%
+  pivot_longer(cols = form_1_boys:total, 
+               names_to = "grade", 
+               values_to = "enrolment") %>% 
+  mutate(grade = str_replace_all(grade, "form_", "form"), 
+         age_modifier = "secondary",
+         sex_modifier = case_when(str_detect(grade, "total") ~ "total",
+                                  str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls"), 
+         public_private = "private",
+         grade = ifelse(str_detect(grade, "total") & !str_detect(grade, "_"), 
+                        "secondary_total", 
+                        grade))
+) %>% 
+  
+  mutate(enrolment = as.numeric(enrolment)) %>% 
+  mutate(county = case_when(county == "Kaiiado" ~ "Kajiado", 
+                            county == "Nairobi Citv" ~ "Nairobi City", 
+                            county == "Nvamira" ~ "Nyamira", 
+                            county == "Siava" ~ "Siaya", 
+                            county == "Waiir" ~ "Wajir", 
+                            
+                            TRUE ~ county))
+
+```
+
+```{r}
+read_excel("./data/ocr_tables/enrolment_grade_7_8_public_lower_secondary.xlsx") %>% 
+  setNames(lower_secondary_names) %>% 
+  slice(2:49) %>% 
+  pivot_longer(cols = grade_7_boys:lower_secondary_total, 
+              names_to = "grade", 
+              values_to = "enrolment") %>% 
+  mutate(public_private = "public", 
+         age_modifier = "primary",
+         sex_modifier = case_when(str_detect(grade, "boys") ~ "boys", 
+                                  str_detect(grade, "girls") ~ "girls", 
+                                  str_detect(grade, "total") ~ "total")) %>% 
+  arrange(county)
+```
+
+
+
+## Learner-toilet ratio
+
+```{r}
+learner_toilet_ratio <- rbind( 
+read_excel("./data/ocr_tables/learner_toilet_ratios_preprimary.xlsx") %>% 
+  setNames(c("county", 
+             "learner_toilet_ratio_boys_public", 
+             "learner_toilet_ratio_girls_public", 
+             "learner_toilet_ratio_boys_private", 
+             "learner_toilet_ratio_girls_private")) %>% 
+  pivot_longer(cols = -county, 
+               names_to = "type", 
+               values_to = "learner_toilet_ratio") %>% 
+  mutate(grade = "preprimary", 
+         sex_modifier = ifelse(str_detect(type, "boys"), "boys", "girls"), 
+         public_private = ifelse(str_detect(type, "public"), "public", "private")) %>% 
+  select(county, grade, sex_modifier, learner_toilet_ratio, public_private),
+  
+
+read_excel("./data/ocr_tables/pupil_toilet_ratio_primary.xlsx") %>% 
+  setNames(c("county", 
+             "learner_toilet_ratio_boys_public", 
+             "learner_toilet_ratio_girls_public", 
+             "learner_toilet_ratio_boys_private", 
+             "learner_toilet_ratio_girls_private")) %>% 
+  pivot_longer(cols = -county, 
+               names_to = "type", 
+               values_to = "learner_toilet_ratio") %>% 
+  mutate(grade = "primary", 
+         sex_modifier = ifelse(str_detect(type, "boys"), "boys", "girls"), 
+         public_private = ifelse(str_detect(type, "public"), "public", "private")) %>% 
+  select(county, grade, sex_modifier, learner_toilet_ratio, public_private),
+
+read_excel("./data/ocr_tables/pupil_toilet_ratio_secondary.xlsx") %>% 
+  clean_names() %>% 
+  select(-toilets_boys_public, -toilets_girls_public, 
+         -toilets_boys_private, -toilets_girls_private) %>% 
+  pivot_longer(cols = -county, 
+               names_to = "type", 
+               values_to = "learner_toilet_ratio") %>% 
+  mutate(grade = "secondary", 
+         sex_modifier = ifelse(str_detect(type, "boys"), "boys", "girls"), 
+         public_private = ifelse(str_detect(type, "public"), "public", "private")) %>% 
+  select(county, grade, sex_modifier, learner_toilet_ratio, public_private)
+) %>% 
+  rename(age_modifier = grade) %>% 
+  mutate(county = case_when(county == "Kish" ~ "Kisii", 
+         TRUE ~ county))
+```
+
+### Learner toilet ratio recalculated 
+
+```{r}
+
+public_enrolment <- enrolment %>% 
+  filter(public_private == "public" & !str_detect(grade, "total")) %>% 
+  group_by(county, sex_modifier, age_modifier) %>% 
+  summarise(enrolment = sum(enrolment))
+
+
+learner_toilet_ratio_recalculated <- rbind(
+learner_toilet_ratio %>%
+  mutate(county = str_trim(county)) %>% 
+  filter(public_private == "public") %>% 
+  left_join(public_enrolment, 
+            by = c("county" = "county", 
+                   "sex_modifier" = "sex_modifier", 
+                   "age_modifier" = "age_modifier")) %>% 
+  mutate(toilets = (enrolment / learner_toilet_ratio)) %>% 
+  group_by(county, age_modifier) %>% 
+  summarise(enrolment = sum(enrolment), 
+            toilets = sum(toilets)) %>% 
+  mutate(learner_toilet_ratio = enrolment / toilets, 
+         sex_modifier = "total"),
+
+learner_toilet_ratio %>%
+  mutate(county = str_trim(county)) %>% 
+  filter(public_private == "public") %>% 
+  left_join(public_enrolment, 
+            by = c("county" = "county", 
+                   "sex_modifier" = "sex_modifier", 
+                   "age_modifier" = "age_modifier")) %>% 
+  mutate(toilets = (enrolment / learner_toilet_ratio)) %>% 
+  select(county, age_modifier, sex_modifier, enrolment, toilets, learner_toilet_ratio))
+```
+
+```{r}
+asal_county_list <- counties %>% distinct(county) %>% pull()
+
+counties %>% 
+  rbind(read_csv("./data/learner_toilet_ratio_recalculated.csv") %>%
+          filter(county %in% c(asal_county_list)) %>% 
+          mutate(indicator = "learner_toilet_ratio_recalculated") %>%
+          select(indicator, county, age_modifier, sex_modifier, value = learner_toilet_ratio)) %>% 
+  count(indicator)
+
+learner_toilet_ratio_recalculated %>% write_csv("./data/learner_toilet_ratio_recalculated.csv")
+```
+
+
+```{r}
+
+  glimpse()
+
+
+```
+
+
+```{r}
+learner_toilet_ratio %>% 
+  filter(public_private == "public")
+
+enrolment %>% 
+  mutate(age_modifier = case_when(str_detect(grade, "preprimary") ~ "preprimary_ece", 
+                                  str_detect(grade, "primary") ~ "primary", 
+                                  str_detect(grade, "lower_secondary") ~ "primary", 
+                                  str_detect(grade, "secondary") ~ "secondary"))
+  glimpse()
+  
+enrolment %>% 
+  filter(public_private == "public") %>% 
+  pivot_wider(names_from = sex_modifier, 
+              values_from = enrolment) %>% 
+  mutate(age_modifier = case_when(str_detect(grade, "preprimary") ~ "preprimary_ece", 
+                                  str_detect(grade, "primary") ~ "primary", 
+                                  str_detect(grade, "lower_secondary") ~ "primary", 
+                                  str_detect(grade, "secondary") ~ "secondary"))
+  unnest()
+```
+
+
+
+

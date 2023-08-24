@@ -1,0 +1,26 @@
+"0","learner_toilet_ratio_recalculated <- rbind(
+learner_toilet_ratio %>%
+  mutate(county = str_trim(county)) %>% 
+  filter(public_private == ""public"") %>% 
+  left_join(public_enrolment, 
+            by = c(""county"" = ""county"", 
+                   ""sex_modifier"" = ""sex_modifier"", 
+                   ""age_modifier"" = ""age_modifier"")) %>% 
+  mutate(toilets = (enrolment / learner_toilet_ratio)) %>% 
+  group_by(county, age_modifier) %>% 
+  summarise(enrolment = sum(enrolment), 
+            toilets = sum(toilets)) %>% 
+  mutate(learner_toilet_ratio = enrolment / toilets, 
+         sex_modifier = ""total""),
+
+learner_toilet_ratio %>%
+  mutate(county = str_trim(county)) %>% 
+  filter(public_private == ""public"") %>% 
+  left_join(public_enrolment, 
+            by = c(""county"" = ""county"", 
+                   ""sex_modifier"" = ""sex_modifier"", 
+                   ""age_modifier"" = ""age_modifier"")) %>% 
+  mutate(toilets = (enrolment / learner_toilet_ratio)) %>% 
+  select(county, age_modifier, sex_modifier, enrolment, toilets, learner_toilet_ratio))
+"
+"2","`summarise()` has grouped output by 'county'. You can override using the `.groups` argument."

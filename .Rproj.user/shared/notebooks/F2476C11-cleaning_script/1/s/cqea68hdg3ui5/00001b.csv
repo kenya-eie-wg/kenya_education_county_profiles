@@ -1,0 +1,23 @@
+"0","read_xlsx(""./data/county_profiles_raw.xlsx"",
+              sheet = 11, skip = 14) %>%
+      slice(1:27) %>%  
+      setNames(
+        c(""indicator"", 
+      ""preprimary_ece_female"", 
+      ""preprimary_ece_male"", 
+      ""preprimary_ece_total"", 
+      ""primary_female"", 
+      ""primary_male"", 
+      ""primary_total"", 
+      ""secondary_female"", 
+      ""secondary_male"", 
+      ""secondary_total"", 
+      ""national_average"")
+      ) %>% 
+      select(-national_average) %>% 
+      mutate_at(vars(indicator), ~ str_trim(str_squish(.))) %>% 
+      mutate_at(vars(indicator), 
+                ~ gsub(""\\[.*?\\]"", """", .)) %>% 
+      filter(!is.na(indicator) & !str_detect(indicator, ""WASH in""))
+"
+"2","New names:"

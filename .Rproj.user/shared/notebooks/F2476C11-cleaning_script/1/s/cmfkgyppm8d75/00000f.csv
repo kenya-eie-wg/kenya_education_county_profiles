@@ -6,7 +6,7 @@
 "2","New names:"
 "0","national_averages <- read_xlsx(""./data/county_profiles_raw.xlsx"", "
 "0","                  sheet = 1, skip = 14) %>%"
-"0","  slice(1:26) %>%  "
+"0","  slice(1:27) %>%  "
 "0","  setNames("
 "0","    c(""indicator"", "
 "0","  ""preprimary_ece_female"", "

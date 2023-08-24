@@ -1,0 +1,136 @@
+"0","enrolment <- rbind(
+# Preprimary enrolments
+read_excel(""./data/ocr_tables/enrolment_public_preprimary.xlsx"") %>% 
+  clean_names() %>% 
+  pivot_longer(cols = pp1_boys:total, 
+               names_to = ""grade"", 
+               values_to = ""enrolment"") %>% 
+  mutate(sex_modifier = case_when(str_detect(grade, ""boys"") ~ ""boys"", 
+                                  str_detect(grade, ""girls"") ~ ""girls"", 
+                                  str_detect(grade, ""total"") ~ ""total""), 
+          age_modifier = ""preprimary"",
+         public_private = ""public"") %>% 
+  mutate(grade = str_replace_all(grade, ""pp"", ""preprimary""), 
+         grade = recode(grade, 
+                        ""total_boys"" = ""preprimary_total_boys"", 
+                        ""total_girls"" = ""preprimary_total_girls"",
+                        ""total"" = ""preprimary_total"")),
+
+read_excel(""./data/ocr_tables/enrolment_private_preprimary.xlsx"") %>% 
+  setNames(c(""county"", ""pp1_boys"", ""pp1_girls"", ""pp1_total"", 
+             ""pp2_boys"", ""pp2_girls"", ""pp2_total"", 
+             ""total_boys"", ""total_girls"", ""total"")) %>% 
+  slice(2:48) %>% 
+  pivot_longer(cols = pp1_boys:total, 
+               names_to = ""grade"", 
+               values_to = ""enrolment"") %>% 
+  mutate(sex_modifier = case_when(str_detect(grade, ""boys"") ~ ""boys"", 
+                                  str_detect(grade, ""girls"") ~ ""girls"", 
+                                  str_detect(grade, ""total"") ~ ""total""), 
+         age_modifier = ""preprimary"", 
+         public_private = ""private"") %>% 
+  mutate(grade = str_replace_all(grade, ""pp"", ""preprimary""),
+         grade = recode(grade, 
+                        ""total_boys"" = ""preprimary_total_boys"", 
+                        ""total_girls"" = ""preprimary_total_girls"",
+                        ""total"" = ""preprimary_total"")),
+         
+# Primary enrolments 
+
+read_excel(""./data/ocr_tables/enrolment_boys_grade1_6_public_primary_schools.xlsx"") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = ""public"", 
+         sex_modifier = ""boys"", 
+         sex_modifier = ifelse(str_detect(grade, ""primary_total""), ""total"", sex_modifier), 
+         grade = paste0(grade, ""_"", sex_modifier)), 
+
+read_excel(""./data/ocr_tables/enrolment_girls_grade1_6_public_primary_schools.xlsx"") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = ""public"", 
+         sex_modifier = ""girls"", 
+         sex_modifier = ifelse(str_detect(grade, ""primary_total""), ""total"", sex_modifier), 
+         grade = paste0(grade, ""_"", sex_modifier)), 
+
+read_excel(""./data/ocr_tables/enrolment_boys_grade1_6_private_primary_schools.xlsx"") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = ""private"", 
+         sex_modifier = ""boys"", 
+         sex_modifier = ifelse(str_detect(grade, ""primary_total""), ""total"", sex_modifier), 
+         grade = paste0(grade, ""_"", sex_modifier)), 
+
+read_excel(""./data/ocr_tables/enrolment_girls_grade1_6_private_primary_schools.xlsx"") %>% 
+  primary_enrolments() %>% 
+  mutate(public_private = ""private"", 
+         sex_modifier = ""girls"", 
+         sex_modifier = ifelse(str_detect(grade, ""primary_total""), ""total"", sex_modifier), 
+         grade = paste0(grade, ""_"", sex_modifier)), 
+
+
+# Lower secondary enrolments 
+read_excel(""./data/ocr_tables/enrolment_grade_7_8_public_lower_secondary.xlsx"") %>% 
+  setNames(lower_secondary_names) %>% 
+  slice(2:49) %>% 
+  pivot_longer(cols = grade_7_boys:lower_secondary_total, 
+              names_to = ""grade"", 
+              values_to = ""enrolment"") %>% 
+  mutate(public_private = ""public"", 
+         age_modifier = ""primary"",
+         sex_modifier = case_when(str_detect(grade, ""boys"") ~ ""boys"", 
+                                  str_detect(grade, ""girls"") ~ ""girls"", 
+                                  str_detect(grade, ""total"") ~ ""total"")), 
+
+read_excel(""./data/ocr_tables/enrolment_grade_7_8_private_lower_secondary.xlsx"") %>% 
+  setNames(lower_secondary_names) %>% 
+  slice(2:49) %>% 
+  pivot_longer(cols = grade_7_boys:lower_secondary_total, 
+              names_to = ""grade"", 
+              values_to = ""enrolment"") %>% 
+  mutate(public_private = ""private"", 
+         age_modifier = ""primary"",
+         sex_modifier = case_when(str_detect(grade, ""boys"") ~ ""boys"", 
+                                  str_detect(grade, ""girls"") ~ ""girls"", 
+                                  str_detect(grade, ""total"") ~ ""total"")),         
+# Secondary enrolments
+read_excel(""./data/ocr_tables/enrolment_public_secondary.xlsx"") %>% 
+  clean_names() %>%
+  pivot_longer(cols = form_1_boys:total, 
+               names_to = ""grade"", 
+               values_to = ""enrolment"") %>% 
+   mutate(grade = str_replace_all(grade, ""form_"", ""form""), 
+         age_modifier = ""secondary"",
+         sex_modifier = case_when(str_detect(grade, ""total"") ~ ""total"",
+                                  str_detect(grade, ""boys"") ~ ""boys"", 
+                                  str_detect(grade, ""girls"") ~ ""girls""), 
+         public_private = ""public"",
+         grade = ifelse(str_detect(grade, ""total"") & !str_detect(grade, ""_""), 
+                        ""secondary_total"", 
+                        grade)),
+
+read_excel(""./data/ocr_tables/enrolment_private_secondary.xlsx"") %>% 
+  clean_names() %>%
+  pivot_longer(cols = form_1_boys:total, 
+               names_to = ""grade"", 
+               values_to = ""enrolment"") %>% 
+  mutate(grade = str_replace_all(grade, ""form_"", ""form""), 
+         age_modifier = ""secondary"",
+         sex_modifier = case_when(str_detect(grade, ""total"") ~ ""total"",
+                                  str_detect(grade, ""boys"") ~ ""boys"", 
+                                  str_detect(grade, ""girls"") ~ ""girls""), 
+         public_private = ""private"",
+         grade = ifelse(str_detect(grade, ""total"") & !str_detect(grade, ""_""), 
+                        ""secondary_total"", 
+                        grade))
+) %>% 
+  
+  mutate(enrolment = as.numeric(enrolment)) %>% 
+  mutate(county = case_when(county == ""Kaiiado"" ~ ""Kajiado"", 
+                            county == ""Nairobi Citv"" ~ ""Nairobi City"", 
+                            county == ""Nvamira"" ~ ""Nyamira"", 
+                            county == ""Siava"" ~ ""Siaya"", 
+                            county == ""Waiir"" ~ ""Wajir"", 
+                            
+                            TRUE ~ county))
+"
+"2","New names:"
+"2","New names:"
+"2","New names:"

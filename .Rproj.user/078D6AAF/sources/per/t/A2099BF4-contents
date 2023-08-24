@@ -63,7 +63,7 @@ read_table <- function(i) {
   bind_rows(
     read_xlsx("./data/county_profiles_raw.xlsx",
               sheet = i, skip = 14) %>%
-      slice(1:26) %>%  
+      slice(1:27) %>%  
       setNames(
         c("indicator", 
       "preprimary_ece_female", 
@@ -106,7 +106,7 @@ read_table <- function(i) {
     
     read_xlsx("./data/county_profiles_raw.xlsx",
               sheet = i, skip = 14) %>%
-      slice(1:26) %>%  
+      slice(1:27) %>%  
       setNames(
         c("indicator", 
       "preprimary_ece_female", 
@@ -248,7 +248,7 @@ county_name_national_averages <- (read_xlsx("./data/county_profiles_raw.xlsx",
 
 national_averages <- read_xlsx("./data/county_profiles_raw.xlsx", 
                   sheet = 1, skip = 14) %>%
-  slice(1:26) %>%  
+  slice(1:27) %>%  
   setNames(
     c("indicator", 
   "preprimary_ece_female", 
@@ -323,12 +323,66 @@ counties %>%
 ```
 
 
+```{r}
+counties <- read_csv("./data/counties.csv")
+
+counties %>% count(indicator)
+```
+
+```{r}
+read_xlsx("./data/county_profiles_raw.xlsx",
+              sheet = 11, skip = 14) %>%
+      slice(1:27) %>%  
+      setNames(
+        c("indicator", 
+      "preprimary_ece_female", 
+      "preprimary_ece_male", 
+      "preprimary_ece_total", 
+      "primary_female", 
+      "primary_male", 
+      "primary_total", 
+      "secondary_female", 
+      "secondary_male", 
+      "secondary_total", 
+      "national_average")
+      ) %>% 
+      select(-national_average) %>% 
+      mutate_at(vars(indicator), ~ str_trim(str_squish(.))) %>% 
+      mutate_at(vars(indicator), 
+                ~ gsub("\\[.*?\\]", "", .)) %>% 
+      filter(!is.na(indicator) & !str_detect(indicator, "WASH in"))  
+      pivot_longer(cols = c(preprimary_ece_female:secondary_total), 
+                     names_to = "modifier", 
+                     values_to = "value") %>% 
+      filter(
+        indicator %in% c("Number of education Institutions (Public & Private)", 
+                         "Gender Parity Index", 
+                         "Learner to teacher Ratio in Public Schools", 
+                         "Learner to Toilet Ratio in Public Schools", 
+                         "Learner-Classroom Ratio in Public Schools", 
+                         "Percentage of students with no access to improved water source", 
+                         "Number of schools with no water source")) %>% 
+      fill(value) %>% 
+      filter(str_detect(modifier, "total")) %>% 
+      mutate(modifier = ifelse(str_detect(indicator, "water source"), 
+                               NA_character_, 
+                               modifier)) %>% 
+      distinct(indicator, modifier, value) %>% 
+      mutate(sex_modifier = "total", 
+             age_modifier = str_remove_all(modifier, "_total"), 
+             value = as.numeric(value)) %>% 
+      select(-modifier)
+```
+
+
 
 
 ```{r}
 counties %>% count(indicator)
 
 counties %>% filter(county == "Baringo" & str_detect(indicator, "Absenteeism"))
+
+
 ```
 
 
