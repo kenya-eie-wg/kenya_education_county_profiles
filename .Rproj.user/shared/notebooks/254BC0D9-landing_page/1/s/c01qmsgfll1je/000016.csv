@@ -1,0 +1,6 @@
+"0","lm_physical_sexual %>% broom::tidy() %>% filter(term != ""(Intercept)"") %>% pull(p.value) %>% round(digits = 4)
+"
+"1","[1]"
+"1"," 0.005"
+"1","
+"
