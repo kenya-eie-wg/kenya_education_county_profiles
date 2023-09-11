@@ -8,16 +8,11 @@
 "0","          quiet = TRUE) %>% "
 "0","  clean_names()"
 "0",""
-"0","asal_county_list <- read_csv(""./data/counties.csv"") %>% distinct(county) %>% pull()"
-"2","[1mRows: [22m[34m902[39m [1mColumns: [22m[34m5[39m"
-"2","[36m--[39m [1mColumn specification[22m [36m-------------------------------------------------------------------------------------[39m
-[1mDelimiter:[22m "",""
-[31mchr[39m (4): indicator, age_modifier, sex_modifier, county
-[32mdbl[39m (1): value"
-"2","
-[36mi[39m Use `spec()` to retrieve the full column specification for this data.
-[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
-"0","counties <- read_csv(""./data/counties.csv"") %>% "
+"0","asal_county_list <- read_csv(""./data/counties.csv"", "
+"0","                             show_col_types = FALSE) %>% distinct(county) %>% pull()"
+"0",""
+"0","counties <- read_csv(""./data/counties.csv"", "
+"0","                     show_col_types = FALSE) %>% "
 "0","  mutate(sex_modifier = fct_relevel(sex_modifier, c(""male"", ""female"", ""total""))) %>% "
 "0","  # Important -- the old values were wrong"
 "0","  rbind(read_csv(""./data/learner_toilet_ratio_recalculated.csv"") %>%"
@@ -30,14 +25,6 @@
 "0","         county = recode(county, "
 "0","                         ""national"" = ""National"","
 "0","                         ""Tharaka Nithi"" = ""Tharaka-Nithi""))"
-"2","[1mRows: [22m[34m902[39m [1mColumns: [22m[34m5[39m"
-"2","[36m--[39m [1mColumn specification[22m [36m-------------------------------------------------------------------------------------[39m
-[1mDelimiter:[22m "",""
-[31mchr[39m (4): indicator, age_modifier, sex_modifier, county
-[32mdbl[39m (1): value"
-"2","
-[36mi[39m Use `spec()` to retrieve the full column specification for this data.
-[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
 "2","[1mRows: [22m[34m432[39m [1mColumns: [22m[34m6[39m"
 "2","[36m--[39m [1mColumn specification[22m [36m-------------------------------------------------------------------------------------[39m
 [1mDelimiter:[22m "",""
