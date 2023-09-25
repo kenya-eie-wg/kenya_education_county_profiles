@@ -1,7 +1,7 @@
 ---
 output: 
   flexdashboard::flex_dashboard:
-    logo: UNICEF-logo-small.png
+    logo: eie_wg_logo_small.png
     orientation: rows
     vertical_layout: fill
     self_contained: true
@@ -12,6 +12,25 @@ params:
 ---
 title: "`r paste0(params$county_selection, " County Education Profile")`"
 ---
+
+<style>                     
+.navbar {
+  background-color:white;
+  border-color:black;
+}
+.navbar-brand {
+color:black!important;
+}
+</style> 
+
+<style type="text/css">
+
+.chart-title {
+   font-size: 18px;
+   font-family: Helvetica;
+   background-colour: #A7C7E7}
+
+</style>
 
 
 ```{r setup, include=FALSE}
@@ -149,6 +168,9 @@ make_dodged_plot <- function(tbl) {
           axis.text.y = element_text(size = 10)) + 
     guides(fill = guide_legend(override.aes = list(size = 0.3)))
 }
+
+# counties %>% write_csv("./data/counties_complete.csv")
+
 ```
 
 

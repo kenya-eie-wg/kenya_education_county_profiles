@@ -15,7 +15,8 @@
 "0","                     show_col_types = FALSE) %>% "
 "0","  mutate(sex_modifier = fct_relevel(sex_modifier, c(""male"", ""female"", ""total""))) %>% "
 "0","  # Important -- the old values were wrong"
-"0","  rbind(read_csv(""./data/learner_toilet_ratio_recalculated.csv"") %>%"
+"0","  rbind(read_csv(""./data/learner_toilet_ratio_recalculated.csv"", "
+"0","                 show_col_types = FALSE) %>%"
 "0","          filter(county %in% c(asal_county_list)) %>% "
 "0","          mutate(indicator = ""learner_toilet_ratio_recalculated"") %>%"
 "0","          select(indicator, county, age_modifier, sex_modifier, value = learner_toilet_ratio)) %>% "
@@ -25,11 +26,3 @@
 "0","         county = recode(county, "
 "0","                         ""national"" = ""National"","
 "0","                         ""Tharaka Nithi"" = ""Tharaka-Nithi""))"
-"2","[1mRows: [22m[34m432[39m [1mColumns: [22m[34m6[39m"
-"2","[36m--[39m [1mColumn specification[22m [36m-------------------------------------------------------------------------------------[39m
-[1mDelimiter:[22m "",""
-[31mchr[39m (3): county, age_modifier, sex_modifier
-[32mdbl[39m (3): enrolment, toilets, learner_toilet_ratio"
-"2","
-[36mi[39m Use `spec()` to retrieve the full column specification for this data.
-[36mi[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."

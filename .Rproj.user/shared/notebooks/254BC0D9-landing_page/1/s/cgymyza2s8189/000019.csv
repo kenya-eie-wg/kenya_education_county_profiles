@@ -1,0 +1,6 @@
+"0","counties %>%
+  filter(indicator %in% c(""school_age_children"", ""out_of_school_children"")) %>% 
+  group_by(indicator, sex_modifier, county) %>% 
+  summarise(value = sum(value))
+"
+"2","`summarise()` has grouped output by 'indicator', 'sex_modifier'. You can override using the `.groups` argument."

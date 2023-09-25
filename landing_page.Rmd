@@ -119,6 +119,10 @@ counties <- read_csv("./data/counties.csv",
 
 # School-aged children
 
+The largest numbers of school-aged children are in `r pop_summary %>% filter(school_age_children == max(school_age_children)) %>% pull(county)` County, though `r pop_summary %>% filter(pc == max(pc)) %>% pull(pc) %>% round(digits = 2)`% of all persons in `r pop_summary %>% filter(pc == max(pc)) %>% pull(county)` are of schooling age, the highest of any county.
+
+<br>
+
 ```{r}
 
 pop_summary <- counties %>% 
@@ -164,7 +168,75 @@ counties %>%
 
 <br> 
 
-The largest numbers of school-aged children are in `r pop_summary %>% filter(school_age_children == max(school_age_children)) %>% pull(county)` County, though `r pop_summary %>% filter(pc == max(pc)) %>% pull(pc) %>% round(digits = 2)`% of all persons in `r pop_summary %>% filter(pc == max(pc)) %>% pull(county)` are of schooling age, the highest of any county. 
+When comparing 
+
+
+```{r fig.height=6}
+ooc_total <- counties %>% 
+  filter(indicator %in% c("out_of_school_children") & sex_modifier != "total") %>% 
+  group_by(indicator, sex_modifier, county) %>% 
+  summarise(out_of_school_children_total = sum(value)) %>% 
+  select(-indicator) %>%  
+  left_join(counties %>% 
+              filter(indicator %in% c("school_age_children") & 
+                       sex_modifier != "total") %>% 
+              select(-indicator, -age_modifier) %>% 
+              rename(school_age_children = value), 
+            by = c("sex_modifier", "county")) %>% 
+  mutate(pc = out_of_school_children_total / school_age_children) 
+
+ooc_total_sort_order <- ooc_total %>% 
+  group_by(county) %>% 
+  summarise(pc = mean(pc)) %>% 
+  arrange(pc) %>% 
+  pull(county)
+
+ooc_total %>% 
+  mutate(sex_modifier = str_to_title(sex_modifier)) %>% 
+  ggplot(aes(x = pc, y = fct_relevel(county, ooc_total_sort_order), fill = sex_modifier)) + 
+  geom_col(position = position_dodge()) + 
+  geom_text(aes(label = percent(pc, accuracy = .1)), 
+            position = position_dodge(width = .9), 
+            colour = "grey40", 
+            hjust = "inward", 
+            size = 3) + 
+  scale_fill_manual(values = c("#1fa187", "#440154")) + 
+  scale_x_continuous(labels = percent) + 
+  labs(title = "Out-of-school children as % of all school-aged children", 
+       x = "Percent of all school-aged children", 
+       y = "", 
+       fill = "")
+```
+
+
+```{r}
+counties %>% 
+  filter(indicator %in% c("out_of_school_children") & 
+           sex_modifier != "total") %>% 
+  ggplot(aes(x = value, y = county, fill = sex_modifier)) + 
+  geom_col(position = position_dodge()) + 
+  scale_fill_manual(values = c("#440154", "#1fa187"), 
+                    guide = guide_legend(reverse = TRUE)) + 
+  facet_wrap(~ age_modifier)
+```
+
+
+
+```{r}
+counties %>%
+  filter(indicator %in% c("school_age_children", "out_of_school_children")) %>% 
+  group_by(indicator, sex_modifier, county) %>% 
+  summarise(value = sum(value)) %>% 
+  ungroup() %>% 
+  pivot_wider()
+  
+  ggplot(aes(x = value, y = county, fill = sex_modifier)) + 
+  geom_col() + 
+  facet_wrap(~ age_modifier)
+
+counties %>% count(indicator)
+```
+
 
 <br><br><br>
 
