@@ -228,7 +228,16 @@ county_clean <- bind_rows(
   read_table(11), 
   read_table(12), 
   read_table(13), 
-  read_table(14)
+  read_table(14), 
+  read_table(15),
+  read_table(16), 
+  read_table(17), 
+  read_table(18), 
+  read_table(19), 
+  read_table(20), 
+  read_table(21), 
+  read_table(22), 
+  read_table(23),
 ) %>% 
   distinct(indicator, value, sex_modifier, age_modifier, county)
 
@@ -317,8 +326,25 @@ national_averages <- read_xlsx("./data/county_profiles_raw.xlsx",
 counties <- rbind(national_averages, county_clean)
 
 counties %>%
+  mutate(county = ifelse(county == "Taita Traveta", "Taita Taveta", county)) %>% 
   write_csv("./data/counties.csv")
 
+read_csv("./data/counties.csv", 
+                     show_col_types = FALSE) %>% 
+  mutate(sex_modifier = fct_relevel(sex_modifier, c("male", "female", "total"))) %>% 
+  # Important -- the old values were wrong
+  rbind(read_csv("./data/learner_toilet_ratio_recalculated.csv", 
+                 show_col_types = FALSE) %>%
+          filter(county %in% c(asal_county_list)) %>% 
+          mutate(indicator = "learner_toilet_ratio_recalculated") %>%
+          select(indicator, county, age_modifier, sex_modifier, value = learner_toilet_ratio)) %>% 
+  mutate(age_modifier = ifelse(age_modifier == "preprimary", 
+                               "preprimary_ece", 
+                               age_modifier), 
+         county = recode(county, 
+                         "national" = "National",
+                         "Tharaka Nithi" = "Tharaka-Nithi")) %>% 
+  write_csv("./data/counties_complete.csv")
 
 ```
 
@@ -327,7 +353,13 @@ counties %>%
 counties <- read_csv("./data/counties.csv")
 
 counties %>% count(indicator)
+
+counties %>% filter(indicator == "Primary-to-Secondary Transition Rate")
+
+counties %>% count(county)
 ```
+
+# Function separated out for checking 
 
 ```{r}
 read_xlsx("./data/county_profiles_raw.xlsx",

@@ -79,4 +79,5 @@
 "0","    guides(fill = guide_legend(override.aes = list(size = 0.3)))"
 "0","}"
 "0",""
+"0","# counties %>% write_csv(""./data/counties_complete.csv"")"
 "0",""
