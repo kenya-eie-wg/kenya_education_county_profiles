@@ -102,20 +102,7 @@ asal_county_list <- read_csv("./data/counties.csv") %>%
                          "national" = "National")) %>% 
   distinct(county) %>% pull()
 
-counties <- read_csv("./data/counties.csv") %>% 
-  mutate(sex_modifier = fct_relevel(sex_modifier, c("male", "female", "total"))) %>% 
-  # Important -- the old values were wrong
-  rbind(read_csv("./data/learner_toilet_ratio_recalculated.csv") %>%
-          filter(county %in% c(asal_county_list)) %>% 
-          mutate(indicator = "learner_toilet_ratio_recalculated") %>%
-          select(indicator, county, age_modifier, sex_modifier, value = learner_toilet_ratio)) %>% 
-  mutate(age_modifier = ifelse(age_modifier == "preprimary", 
-                               "preprimary_ece", 
-                               age_modifier), 
-         county = recode(county, 
-                         "national" = "National",
-                         "Tharaka Nithi" = "Tharaka-Nithi"))
-
+counties <- read_csv("./data/counties.csv") 
 
 pie_chart <- function(tbl){
   
@@ -171,10 +158,6 @@ make_dodged_plot <- function(tbl) {
 
 ```
 
-```{r}
-counties %>% 
-  filter(county == "Isiolo" & str_detect(indicator, "Absent"))
-```
 
 
 Row {data-height=300}
