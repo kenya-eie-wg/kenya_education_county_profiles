@@ -1,6 +1,0 @@
-"0","counties <- rbind(national_averages, county_clean)"
-"0",""
-"0","counties %>%"
-"0","  write_csv(""./data/counties.csv"")"
-"0",""
-"0",""

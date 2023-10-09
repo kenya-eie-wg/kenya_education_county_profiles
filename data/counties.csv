@@ -1,38 +1,38 @@
 indicator,age_modifier,sex_modifier,value,county
-Number of education Institutions (Public & Private),preprimary_ece,NA,46652,national
-Number of education Institutions (Public & Private),primary,NA,31464,national
-Number of education Institutions (Public & Private),secondary,NA,10390,national
-Net Enrolment Rate (NER),preprimary_ece,male,111.5,national
-Net Enrolment Rate (NER),preprimary_ece,female,110.8,national
-Net Enrolment Rate (NER),preprimary_ece,total,111.2,national
-Net Enrolment Rate (NER),primary,male,78.6,national
-Net Enrolment Rate (NER),primary,female,77.7,national
-Net Enrolment Rate (NER),primary,total,78.1,national
-Net Enrolment Rate (NER),secondary,male,51.2,national
-Net Enrolment Rate (NER),secondary,female,57.2,national
-Net Enrolment Rate (NER),secondary,total,54.1,national
-Gender Parity Index,preprimary_ece,NA,0.97,national
-Gender Parity Index,primary,NA,0.96,national
-Gender Parity Index,secondary,NA,1.01,national
-Learner to teacher Ratio in Public Schools,preprimary_ece,NA,52,national
-Learner to teacher Ratio in Public Schools,primary,NA,40,national
-Learner to teacher Ratio in Public Schools,secondary,NA,29,national
-Learner-Classroom Ratio in Public Schools,preprimary_ece,NA,53,national
-Learner-Classroom Ratio in Public Schools,primary,NA,37,national
-Learner-Classroom Ratio in Public Schools,secondary,NA,40,national
-Primary-to-Secondary Transition Rate,secondary,male,87,national
-Primary-to-Secondary Transition Rate,secondary,female,87.1,national
-Primary-to-Secondary Transition Rate,secondary,total,87.1,national
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,40,national
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,34,national
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,37,national
-Learner to Toilet Ratio in Public Schools,primary,male,33,national
-Learner to Toilet Ratio in Public Schools,primary,female,30,national
-Learner to Toilet Ratio in Public Schools,primary,total,32,national
-Learner to Toilet Ratio in Public Schools,secondary,male,22,national
-Learner to Toilet Ratio in Public Schools,secondary,female,18,national
-Learner to Toilet Ratio in Public Schools,secondary,total,20,national
-FGM: Percentage of women aged 15-49 yrs who were ever circumcised across Kenya,total,female,0.148,national
+Number of education Institutions (Public & Private),preprimary_ece,NA,46652,National
+Number of education Institutions (Public & Private),primary,NA,31464,National
+Number of education Institutions (Public & Private),secondary,NA,10390,National
+Net Enrolment Rate (NER),preprimary_ece,male,111.5,National
+Net Enrolment Rate (NER),preprimary_ece,female,110.8,National
+Net Enrolment Rate (NER),preprimary_ece,total,111.2,National
+Net Enrolment Rate (NER),primary,male,78.6,National
+Net Enrolment Rate (NER),primary,female,77.7,National
+Net Enrolment Rate (NER),primary,total,78.1,National
+Net Enrolment Rate (NER),secondary,male,51.2,National
+Net Enrolment Rate (NER),secondary,female,57.2,National
+Net Enrolment Rate (NER),secondary,total,54.1,National
+Gender Parity Index,preprimary_ece,NA,0.97,National
+Gender Parity Index,primary,NA,0.96,National
+Gender Parity Index,secondary,NA,1.01,National
+Learner to teacher Ratio in Public Schools,preprimary_ece,NA,52,National
+Learner to teacher Ratio in Public Schools,primary,NA,40,National
+Learner to teacher Ratio in Public Schools,secondary,NA,29,National
+Learner-Classroom Ratio in Public Schools,preprimary_ece,NA,53,National
+Learner-Classroom Ratio in Public Schools,primary,NA,37,National
+Learner-Classroom Ratio in Public Schools,secondary,NA,40,National
+Primary-to-Secondary Transition Rate,secondary,male,87,National
+Primary-to-Secondary Transition Rate,secondary,female,87.1,National
+Primary-to-Secondary Transition Rate,secondary,total,87.1,National
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,40,National
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,34,National
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,37,National
+Learner to Toilet Ratio in Public Schools ,primary,male,33,National
+Learner to Toilet Ratio in Public Schools ,primary,female,30,National
+Learner to Toilet Ratio in Public Schools ,primary,total,32,National
+Learner to Toilet Ratio in Public Schools ,secondary,male,22,National
+Learner to Toilet Ratio in Public Schools ,secondary,female,18,National
+Learner to Toilet Ratio in Public Schools ,secondary,total,20,National
+FGM: Percentage of women aged 15-49 yrs who were ever circumcised across Kenya,total,female,0.148,National
 Number of education Institutions (Public & Private),preprimary_ece,total,1472,Makueni
 Number of education Institutions (Public & Private),primary,total,1017,Makueni
 Number of education Institutions (Public & Private),secondary,total,407,Makueni
@@ -68,15 +68,15 @@ Net Enrolment Rate (NER),secondary,total,81.2,Makueni
 Primary-to-Secondary Transition Rate,secondary,female,91.4,Makueni
 Primary-to-Secondary Transition Rate,secondary,male,90.5,Makueni
 Primary-to-Secondary Transition Rate,secondary,total,90.9,Makueni
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,14,Makueni
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,16,Makueni
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,15,Makueni
-Learner to Toilet Ratio in Public Schools,primary,female,21,Makueni
-Learner to Toilet Ratio in Public Schools,primary,male,24,Makueni
-Learner to Toilet Ratio in Public Schools,primary,total,23,Makueni
-Learner to Toilet Ratio in Public Schools,secondary,female,16,Makueni
-Learner to Toilet Ratio in Public Schools,secondary,male,19,Makueni
-Learner to Toilet Ratio in Public Schools,secondary,total,18,Makueni
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,14,Makueni
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,16,Makueni
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,15,Makueni
+Learner to Toilet Ratio in Public Schools ,primary,female,21,Makueni
+Learner to Toilet Ratio in Public Schools ,primary,male,24,Makueni
+Learner to Toilet Ratio in Public Schools ,primary,total,23,Makueni
+Learner to Toilet Ratio in Public Schools ,secondary,female,16,Makueni
+Learner to Toilet Ratio in Public Schools ,secondary,male,19,Makueni
+Learner to Toilet Ratio in Public Schools ,secondary,total,18,Makueni
 county_population,total,female,529230,Makueni
 county_population,total,male,513070,Makueni
 county_population,total,total,1042300,Makueni
@@ -130,15 +130,15 @@ Net Enrolment Rate (NER),secondary,total,11.4,Mandera
 Primary-to-Secondary Transition Rate,secondary,female,81.8,Mandera
 Primary-to-Secondary Transition Rate,secondary,male,85.8,Mandera
 Primary-to-Secondary Transition Rate,secondary,total,84.3,Mandera
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,143,Mandera
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,185,Mandera
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,164,Mandera
-Learner to Toilet Ratio in Public Schools,primary,female,63,Mandera
-Learner to Toilet Ratio in Public Schools,primary,male,94,Mandera
-Learner to Toilet Ratio in Public Schools,primary,total,78.5,Mandera
-Learner to Toilet Ratio in Public Schools,secondary,female,24,Mandera
-Learner to Toilet Ratio in Public Schools,secondary,male,30,Mandera
-Learner to Toilet Ratio in Public Schools,secondary,total,27,Mandera
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,143,Mandera
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,185,Mandera
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,164,Mandera
+Learner to Toilet Ratio in Public Schools ,primary,female,63,Mandera
+Learner to Toilet Ratio in Public Schools ,primary,male,94,Mandera
+Learner to Toilet Ratio in Public Schools ,primary,total,78.5,Mandera
+Learner to Toilet Ratio in Public Schools ,secondary,female,24,Mandera
+Learner to Toilet Ratio in Public Schools ,secondary,male,30,Mandera
+Learner to Toilet Ratio in Public Schools ,secondary,total,27,Mandera
 county_population,total,female,469826,Mandera
 county_population,total,male,489410,Mandera
 county_population,total,total,959236,Mandera
@@ -192,15 +192,15 @@ Net Enrolment Rate (NER),secondary,total,11.4,Marsabit
 Primary-to-Secondary Transition Rate,secondary,female,78.9,Marsabit
 Primary-to-Secondary Transition Rate,secondary,male,79.7,Marsabit
 Primary-to-Secondary Transition Rate,secondary,total,79.3,Marsabit
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,79,Marsabit
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,76,Marsabit
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,77.5,Marsabit
-Learner to Toilet Ratio in Public Schools,primary,female,39,Marsabit
-Learner to Toilet Ratio in Public Schools,primary,male,43,Marsabit
-Learner to Toilet Ratio in Public Schools,primary,total,41,Marsabit
-Learner to Toilet Ratio in Public Schools,secondary,female,19,Marsabit
-Learner to Toilet Ratio in Public Schools,secondary,male,22,Marsabit
-Learner to Toilet Ratio in Public Schools,secondary,total,21,Marsabit
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,79,Marsabit
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,76,Marsabit
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,77.5,Marsabit
+Learner to Toilet Ratio in Public Schools ,primary,female,39,Marsabit
+Learner to Toilet Ratio in Public Schools ,primary,male,43,Marsabit
+Learner to Toilet Ratio in Public Schools ,primary,total,41,Marsabit
+Learner to Toilet Ratio in Public Schools ,secondary,female,19,Marsabit
+Learner to Toilet Ratio in Public Schools ,secondary,male,22,Marsabit
+Learner to Toilet Ratio in Public Schools ,secondary,total,21,Marsabit
 county_population,total,female,259237,Marsabit
 county_population,total,male,256056,Marsabit
 county_population,total,total,515292,Marsabit
@@ -254,15 +254,15 @@ Net Enrolment Rate (NER),secondary,total,61.9,Meru
 Primary-to-Secondary Transition Rate,secondary,female,86.9,Meru
 Primary-to-Secondary Transition Rate,secondary,male,85.8,Meru
 Primary-to-Secondary Transition Rate,secondary,total,86.4,Meru
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,26,Meru
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,31,Meru
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,28.5,Meru
-Learner to Toilet Ratio in Public Schools,primary,female,20,Meru
-Learner to Toilet Ratio in Public Schools,primary,male,24,Meru
-Learner to Toilet Ratio in Public Schools,primary,total,22,Meru
-Learner to Toilet Ratio in Public Schools,secondary,female,15,Meru
-Learner to Toilet Ratio in Public Schools,secondary,male,18,Meru
-Learner to Toilet Ratio in Public Schools,secondary,total,17,Meru
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,26,Meru
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,31,Meru
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,28.5,Meru
+Learner to Toilet Ratio in Public Schools ,primary,female,20,Meru
+Learner to Toilet Ratio in Public Schools ,primary,male,24,Meru
+Learner to Toilet Ratio in Public Schools ,primary,total,22,Meru
+Learner to Toilet Ratio in Public Schools ,secondary,female,15,Meru
+Learner to Toilet Ratio in Public Schools ,secondary,male,18,Meru
+Learner to Toilet Ratio in Public Schools ,secondary,total,17,Meru
 county_population,total,female,817774,Meru
 county_population,total,male,808208,Meru
 county_population,total,total,1625982,Meru
@@ -316,15 +316,15 @@ Net Enrolment Rate (NER),secondary,total,30,Samburu
 Primary-to-Secondary Transition Rate,secondary,female,82.6,Samburu
 Primary-to-Secondary Transition Rate,secondary,male,78.9,Samburu
 Primary-to-Secondary Transition Rate,secondary,total,80.6,Samburu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,75,Samburu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,85,Samburu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,80,Samburu
-Learner to Toilet Ratio in Public Schools,primary,female,40,Samburu
-Learner to Toilet Ratio in Public Schools,primary,male,50,Samburu
-Learner to Toilet Ratio in Public Schools,primary,total,45,Samburu
-Learner to Toilet Ratio in Public Schools,secondary,female,18,Samburu
-Learner to Toilet Ratio in Public Schools,secondary,male,21,Samburu
-Learner to Toilet Ratio in Public Schools,secondary,total,20,Samburu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,75,Samburu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,85,Samburu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,80,Samburu
+Learner to Toilet Ratio in Public Schools ,primary,female,40,Samburu
+Learner to Toilet Ratio in Public Schools ,primary,male,50,Samburu
+Learner to Toilet Ratio in Public Schools ,primary,total,45,Samburu
+Learner to Toilet Ratio in Public Schools ,secondary,female,18,Samburu
+Learner to Toilet Ratio in Public Schools ,secondary,male,21,Samburu
+Learner to Toilet Ratio in Public Schools ,secondary,total,20,Samburu
 county_population,total,female,175936,Samburu
 county_population,total,male,172362,Samburu
 county_population,total,total,348298,Samburu
@@ -378,15 +378,15 @@ Net Enrolment Rate (NER),secondary,total,18.9,Tana River
 Primary-to-Secondary Transition Rate,secondary,female,80.3,Tana River
 Primary-to-Secondary Transition Rate,secondary,male,84.3,Tana River
 Primary-to-Secondary Transition Rate,secondary,total,82.4,Tana River
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,88,Tana River
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,100,Tana River
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,94,Tana River
-Learner to Toilet Ratio in Public Schools,primary,female,43,Tana River
-Learner to Toilet Ratio in Public Schools,primary,male,50,Tana River
-Learner to Toilet Ratio in Public Schools,primary,total,47,Tana River
-Learner to Toilet Ratio in Public Schools,secondary,female,18,Tana River
-Learner to Toilet Ratio in Public Schools,secondary,male,29,Tana River
-Learner to Toilet Ratio in Public Schools,secondary,total,24,Tana River
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,88,Tana River
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,100,Tana River
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,94,Tana River
+Learner to Toilet Ratio in Public Schools ,primary,female,43,Tana River
+Learner to Toilet Ratio in Public Schools ,primary,male,50,Tana River
+Learner to Toilet Ratio in Public Schools ,primary,total,47,Tana River
+Learner to Toilet Ratio in Public Schools ,secondary,female,18,Tana River
+Learner to Toilet Ratio in Public Schools ,secondary,male,29,Tana River
+Learner to Toilet Ratio in Public Schools ,secondary,total,24,Tana River
 county_population,total,female,178288,Tana River
 county_population,total,male,174260,Tana River
 county_population,total,total,352549,Tana River
@@ -405,68 +405,68 @@ out_of_school_children,secondary,total,10420,Tana River
 Percentage of Teenage Pregnancy for girls/women aged 15-19 yrs who have ever been pregnant,total,female,0.176,Tana River
 GBV: Percentage of girls/women who have experienced physical violence since age 15,total,female,0.358,Tana River
 GBV: Percentage of girls/women aged 15-49 yrs who have ever experienced sexual violence,total,female,0.023,Tana River
-Number of education Institutions (Public & Private),preprimary_ece,total,557,Tharaka Nithi
-Number of education Institutions (Public & Private),primary,total,545,Tharaka Nithi
-Number of education Institutions (Public & Private),secondary,total,160,Tharaka Nithi
-Gender Parity Index,preprimary_ece,total,1,Tharaka Nithi
-Gender Parity Index,primary,total,0.97,Tharaka Nithi
-Gender Parity Index,secondary,total,1.08,Tharaka Nithi
-Learner to teacher Ratio in Public Schools,preprimary_ece,total,29,Tharaka Nithi
-Learner to teacher Ratio in Public Schools,primary,total,22,Tharaka Nithi
-Learner to teacher Ratio in Public Schools,secondary,total,24,Tharaka Nithi
-Learner-Classroom Ratio in Public Schools,preprimary_ece,total,31,Tharaka Nithi
-Learner-Classroom Ratio in Public Schools,primary,total,20,Tharaka Nithi
-Learner-Classroom Ratio in Public Schools,secondary,total,37,Tharaka Nithi
-Percentage of students with no access to improved water source,NA,total,23,Tharaka Nithi
-Number of schools with no water source,NA,total,164,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,preprimary_ece,female,65,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,preprimary_ece,male,45,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,preprimary_ece,total,110,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,primary,female,1080,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,primary,male,941,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,primary,total,2021,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,secondary,female,3,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,secondary,male,81,Tharaka Nithi
-Students' dropout/Absenteeism during 2022,secondary,total,84,Tharaka Nithi
-Net Enrolment Rate (NER),preprimary_ece,female,171.2,Tharaka Nithi
-Net Enrolment Rate (NER),preprimary_ece,male,168.6,Tharaka Nithi
-Net Enrolment Rate (NER),preprimary_ece,total,169.9,Tharaka Nithi
-Net Enrolment Rate (NER),primary,female,98.9,Tharaka Nithi
-Net Enrolment Rate (NER),primary,male,100.8,Tharaka Nithi
-Net Enrolment Rate (NER),primary,total,99.9,Tharaka Nithi
-Net Enrolment Rate (NER),secondary,female,102.8,Tharaka Nithi
-Net Enrolment Rate (NER),secondary,male,91.2,Tharaka Nithi
-Net Enrolment Rate (NER),secondary,total,97,Tharaka Nithi
-Primary-to-Secondary Transition Rate,secondary,female,88.9,Tharaka Nithi
-Primary-to-Secondary Transition Rate,secondary,male,87.1,Tharaka Nithi
-Primary-to-Secondary Transition Rate,secondary,total,88.1,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,14,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,16,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,15,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,primary,female,16,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,primary,male,18,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,primary,total,17,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,secondary,female,14,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,secondary,male,17,Tharaka Nithi
-Learner to Toilet Ratio in Public Schools,secondary,total,16,Tharaka Nithi
-county_population,total,female,211732,Tharaka Nithi
-county_population,total,male,204652,Tharaka Nithi
-county_population,total,total,416383,Tharaka Nithi
-school_age_children,total,female,57717,Tharaka Nithi
-school_age_children,total,male,57545,Tharaka Nithi
-school_age_children,total,total,115262,Tharaka Nithi
-out_of_school_children,preprimary_ece,female,1450,Tharaka Nithi
-out_of_school_children,preprimary_ece,male,1400,Tharaka Nithi
-out_of_school_children,preprimary_ece,total,2850,Tharaka Nithi
-out_of_school_children,primary,female,1020,Tharaka Nithi
-out_of_school_children,primary,male,1240,Tharaka Nithi
-out_of_school_children,primary,total,2260,Tharaka Nithi
-out_of_school_children,secondary,female,1300,Tharaka Nithi
-out_of_school_children,secondary,male,1400,Tharaka Nithi
-out_of_school_children,secondary,total,2700,Tharaka Nithi
-Percentage of Teenage Pregnancy for girls/women aged 15-19 yrs who have ever been pregnant,total,female,0.099,Tharaka Nithi
-GBV: Percentage of girls/women who have experienced physical violence since age 15,total,female,0.346,Tharaka Nithi
-GBV: Percentage of girls/women aged 15-49 yrs who have ever experienced sexual violence,total,female,0.125,Tharaka Nithi
+Number of education Institutions (Public & Private),preprimary_ece,total,557,Tharaka-Nithi
+Number of education Institutions (Public & Private),primary,total,545,Tharaka-Nithi
+Number of education Institutions (Public & Private),secondary,total,160,Tharaka-Nithi
+Gender Parity Index,preprimary_ece,total,1,Tharaka-Nithi
+Gender Parity Index,primary,total,0.97,Tharaka-Nithi
+Gender Parity Index,secondary,total,1.08,Tharaka-Nithi
+Learner to teacher Ratio in Public Schools,preprimary_ece,total,29,Tharaka-Nithi
+Learner to teacher Ratio in Public Schools,primary,total,22,Tharaka-Nithi
+Learner to teacher Ratio in Public Schools,secondary,total,24,Tharaka-Nithi
+Learner-Classroom Ratio in Public Schools,preprimary_ece,total,31,Tharaka-Nithi
+Learner-Classroom Ratio in Public Schools,primary,total,20,Tharaka-Nithi
+Learner-Classroom Ratio in Public Schools,secondary,total,37,Tharaka-Nithi
+Percentage of students with no access to improved water source,NA,total,23,Tharaka-Nithi
+Number of schools with no water source,NA,total,164,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,preprimary_ece,female,65,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,preprimary_ece,male,45,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,preprimary_ece,total,110,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,primary,female,1080,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,primary,male,941,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,primary,total,2021,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,secondary,female,3,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,secondary,male,81,Tharaka-Nithi
+Students' dropout/Absenteeism during 2022,secondary,total,84,Tharaka-Nithi
+Net Enrolment Rate (NER),preprimary_ece,female,171.2,Tharaka-Nithi
+Net Enrolment Rate (NER),preprimary_ece,male,168.6,Tharaka-Nithi
+Net Enrolment Rate (NER),preprimary_ece,total,169.9,Tharaka-Nithi
+Net Enrolment Rate (NER),primary,female,98.9,Tharaka-Nithi
+Net Enrolment Rate (NER),primary,male,100.8,Tharaka-Nithi
+Net Enrolment Rate (NER),primary,total,99.9,Tharaka-Nithi
+Net Enrolment Rate (NER),secondary,female,102.8,Tharaka-Nithi
+Net Enrolment Rate (NER),secondary,male,91.2,Tharaka-Nithi
+Net Enrolment Rate (NER),secondary,total,97,Tharaka-Nithi
+Primary-to-Secondary Transition Rate,secondary,female,88.9,Tharaka-Nithi
+Primary-to-Secondary Transition Rate,secondary,male,87.1,Tharaka-Nithi
+Primary-to-Secondary Transition Rate,secondary,total,88.1,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,14,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,16,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,15,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,primary,female,16,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,primary,male,18,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,primary,total,17,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,secondary,female,14,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,secondary,male,17,Tharaka-Nithi
+Learner to Toilet Ratio in Public Schools ,secondary,total,16,Tharaka-Nithi
+county_population,total,female,211732,Tharaka-Nithi
+county_population,total,male,204652,Tharaka-Nithi
+county_population,total,total,416383,Tharaka-Nithi
+school_age_children,total,female,57717,Tharaka-Nithi
+school_age_children,total,male,57545,Tharaka-Nithi
+school_age_children,total,total,115262,Tharaka-Nithi
+out_of_school_children,preprimary_ece,female,1450,Tharaka-Nithi
+out_of_school_children,preprimary_ece,male,1400,Tharaka-Nithi
+out_of_school_children,preprimary_ece,total,2850,Tharaka-Nithi
+out_of_school_children,primary,female,1020,Tharaka-Nithi
+out_of_school_children,primary,male,1240,Tharaka-Nithi
+out_of_school_children,primary,total,2260,Tharaka-Nithi
+out_of_school_children,secondary,female,1300,Tharaka-Nithi
+out_of_school_children,secondary,male,1400,Tharaka-Nithi
+out_of_school_children,secondary,total,2700,Tharaka-Nithi
+Percentage of Teenage Pregnancy for girls/women aged 15-19 yrs who have ever been pregnant,total,female,0.099,Tharaka-Nithi
+GBV: Percentage of girls/women who have experienced physical violence since age 15,total,female,0.346,Tharaka-Nithi
+GBV: Percentage of girls/women aged 15-49 yrs who have ever experienced sexual violence,total,female,0.125,Tharaka-Nithi
 Number of education Institutions (Public & Private),preprimary_ece,total,942,Turkana
 Number of education Institutions (Public & Private),primary,total,471,Turkana
 Number of education Institutions (Public & Private),secondary,total,61,Turkana
@@ -502,15 +502,15 @@ Net Enrolment Rate (NER),secondary,total,16.7,Turkana
 Primary-to-Secondary Transition Rate,secondary,female,79,Turkana
 Primary-to-Secondary Transition Rate,secondary,male,85.3,Turkana
 Primary-to-Secondary Transition Rate,secondary,total,82.3,Turkana
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,176,Turkana
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,187,Turkana
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,181.5,Turkana
-Learner to Toilet Ratio in Public Schools,primary,female,65,Turkana
-Learner to Toilet Ratio in Public Schools,primary,male,88,Turkana
-Learner to Toilet Ratio in Public Schools,primary,total,77,Turkana
-Learner to Toilet Ratio in Public Schools,secondary,female,28,Turkana
-Learner to Toilet Ratio in Public Schools,secondary,male,40,Turkana
-Learner to Toilet Ratio in Public Schools,secondary,total,34,Turkana
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,176,Turkana
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,187,Turkana
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,181.5,Turkana
+Learner to Toilet Ratio in Public Schools ,primary,female,65,Turkana
+Learner to Toilet Ratio in Public Schools ,primary,male,88,Turkana
+Learner to Toilet Ratio in Public Schools ,primary,total,77,Turkana
+Learner to Toilet Ratio in Public Schools ,secondary,female,28,Turkana
+Learner to Toilet Ratio in Public Schools ,secondary,male,40,Turkana
+Learner to Toilet Ratio in Public Schools ,secondary,total,34,Turkana
 county_population,total,female,517384,Turkana
 county_population,total,male,505390,Turkana
 county_population,total,total,1022773,Turkana
@@ -564,15 +564,15 @@ Net Enrolment Rate (NER),secondary,total,14.5,Wajir
 Primary-to-Secondary Transition Rate,secondary,female,82.2,Wajir
 Primary-to-Secondary Transition Rate,secondary,male,84.2,Wajir
 Primary-to-Secondary Transition Rate,secondary,total,83.4,Wajir
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,113,Wajir
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,136,Wajir
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,125,Wajir
-Learner to Toilet Ratio in Public Schools,primary,female,55,Wajir
-Learner to Toilet Ratio in Public Schools,primary,male,72,Wajir
-Learner to Toilet Ratio in Public Schools,primary,total,64,Wajir
-Learner to Toilet Ratio in Public Schools,secondary,female,28,Wajir
-Learner to Toilet Ratio in Public Schools,secondary,male,46,Wajir
-Learner to Toilet Ratio in Public Schools,secondary,total,37,Wajir
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,113,Wajir
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,136,Wajir
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,125,Wajir
+Learner to Toilet Ratio in Public Schools ,primary,female,55,Wajir
+Learner to Toilet Ratio in Public Schools ,primary,male,72,Wajir
+Learner to Toilet Ratio in Public Schools ,primary,total,64,Wajir
+Learner to Toilet Ratio in Public Schools ,secondary,female,28,Wajir
+Learner to Toilet Ratio in Public Schools ,secondary,male,46,Wajir
+Learner to Toilet Ratio in Public Schools ,secondary,total,37,Wajir
 county_population,total,female,438918,Wajir
 county_population,total,male,431718,Wajir
 county_population,total,total,870636,Wajir
@@ -626,15 +626,15 @@ Net Enrolment Rate (NER),secondary,total,52.2,Baringo
 Primary-to-Secondary Transition Rate,secondary,female,86.8,Baringo
 Primary-to-Secondary Transition Rate,secondary,male,86,Baringo
 Primary-to-Secondary Transition Rate,secondary,total,86.4,Baringo
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,32,Baringo
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,37,Baringo
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,35,Baringo
-Learner to Toilet Ratio in Public Schools,primary,female,27,Baringo
-Learner to Toilet Ratio in Public Schools,primary,male,32,Baringo
-Learner to Toilet Ratio in Public Schools,primary,total,30,Baringo
-Learner to Toilet Ratio in Public Schools,secondary,female,17,Baringo
-Learner to Toilet Ratio in Public Schools,secondary,male,20,Baringo
-Learner to Toilet Ratio in Public Schools,secondary,total,19,Baringo
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,32,Baringo
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,37,Baringo
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,35,Baringo
+Learner to Toilet Ratio in Public Schools ,primary,female,27,Baringo
+Learner to Toilet Ratio in Public Schools ,primary,male,32,Baringo
+Learner to Toilet Ratio in Public Schools ,primary,total,30,Baringo
+Learner to Toilet Ratio in Public Schools ,secondary,female,17,Baringo
+Learner to Toilet Ratio in Public Schools ,secondary,male,20,Baringo
+Learner to Toilet Ratio in Public Schools ,secondary,total,19,Baringo
 county_population,total,female,371883,Baringo
 county_population,total,male,361450,Baringo
 county_population,total,total,733333,Baringo
@@ -688,15 +688,15 @@ Net Enrolment Rate (NER),secondary,total,9.9,Garissa
 Primary-to-Secondary Transition Rate,secondary,female,86.4,Garissa
 Primary-to-Secondary Transition Rate,secondary,male,84.8,Garissa
 Primary-to-Secondary Transition Rate,secondary,total,85.4,Garissa
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,56,Garissa
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,68,Garissa
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,62,Garissa
-Learner to Toilet Ratio in Public Schools,primary,female,35,Garissa
-Learner to Toilet Ratio in Public Schools,primary,male,49,Garissa
-Learner to Toilet Ratio in Public Schools,primary,total,42,Garissa
-Learner to Toilet Ratio in Public Schools,secondary,female,26,Garissa
-Learner to Toilet Ratio in Public Schools,secondary,male,23,Garissa
-Learner to Toilet Ratio in Public Schools,secondary,total,25,Garissa
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,56,Garissa
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,68,Garissa
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,62,Garissa
+Learner to Toilet Ratio in Public Schools ,primary,female,35,Garissa
+Learner to Toilet Ratio in Public Schools ,primary,male,49,Garissa
+Learner to Toilet Ratio in Public Schools ,primary,total,42,Garissa
+Learner to Toilet Ratio in Public Schools ,secondary,female,26,Garissa
+Learner to Toilet Ratio in Public Schools ,secondary,male,23,Garissa
+Learner to Toilet Ratio in Public Schools ,secondary,total,25,Garissa
 county_population,total,female,468506,Garissa
 county_population,total,male,458525,Garissa
 county_population,total,total,927031,Garissa
@@ -750,15 +750,15 @@ Net Enrolment Rate (NER),secondary,total,20.4,Isiolo
 Primary-to-Secondary Transition Rate,secondary,female,67.5,Isiolo
 Primary-to-Secondary Transition Rate,secondary,male,74,Isiolo
 Primary-to-Secondary Transition Rate,secondary,total,70.4,Isiolo
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,78,Isiolo
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,76,Isiolo
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,77,Isiolo
-Learner to Toilet Ratio in Public Schools,primary,female,30,Isiolo
-Learner to Toilet Ratio in Public Schools,primary,male,30,Isiolo
-Learner to Toilet Ratio in Public Schools,primary,total,30,Isiolo
-Learner to Toilet Ratio in Public Schools,secondary,female,18,Isiolo
-Learner to Toilet Ratio in Public Schools,secondary,male,19,Isiolo
-Learner to Toilet Ratio in Public Schools,secondary,total,19,Isiolo
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,78,Isiolo
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,76,Isiolo
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,77,Isiolo
+Learner to Toilet Ratio in Public Schools ,primary,female,30,Isiolo
+Learner to Toilet Ratio in Public Schools ,primary,male,30,Isiolo
+Learner to Toilet Ratio in Public Schools ,primary,total,30,Isiolo
+Learner to Toilet Ratio in Public Schools ,secondary,female,18,Isiolo
+Learner to Toilet Ratio in Public Schools ,secondary,male,19,Isiolo
+Learner to Toilet Ratio in Public Schools ,secondary,total,19,Isiolo
 county_population,total,female,161431,Isiolo
 county_population,total,male,154506,Isiolo
 county_population,total,total,315937,Isiolo
@@ -812,15 +812,15 @@ Net Enrolment Rate (NER),secondary,total,53.1,Kitui
 Primary-to-Secondary Transition Rate,secondary,female,82.7,Kitui
 Primary-to-Secondary Transition Rate,secondary,male,81.5,Kitui
 Primary-to-Secondary Transition Rate,secondary,total,82.1,Kitui
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,15,Kitui
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,22,Kitui
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,18.5,Kitui
-Learner to Toilet Ratio in Public Schools,primary,female,23,Kitui
-Learner to Toilet Ratio in Public Schools,primary,male,13,Kitui
-Learner to Toilet Ratio in Public Schools,primary,total,18,Kitui
-Learner to Toilet Ratio in Public Schools,secondary,female,15,Kitui
-Learner to Toilet Ratio in Public Schools,secondary,male,17,Kitui
-Learner to Toilet Ratio in Public Schools,secondary,total,16,Kitui
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,15,Kitui
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,22,Kitui
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,18.5,Kitui
+Learner to Toilet Ratio in Public Schools ,primary,female,23,Kitui
+Learner to Toilet Ratio in Public Schools ,primary,male,13,Kitui
+Learner to Toilet Ratio in Public Schools ,primary,total,18,Kitui
+Learner to Toilet Ratio in Public Schools ,secondary,female,15,Kitui
+Learner to Toilet Ratio in Public Schools ,secondary,male,17,Kitui
+Learner to Toilet Ratio in Public Schools ,secondary,total,16,Kitui
 county_population,total,female,626579,Kitui
 county_population,total,male,603211,Kitui
 county_population,total,total,1229790,Kitui
@@ -874,15 +874,15 @@ Net Enrolment Rate (NER),secondary,total,59.3,Laikipia
 Primary-to-Secondary Transition Rate,secondary,female,88.6,Laikipia
 Primary-to-Secondary Transition Rate,secondary,male,87.6,Laikipia
 Primary-to-Secondary Transition Rate,secondary,total,88.1,Laikipia
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,33,Laikipia
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,37,Laikipia
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,35,Laikipia
-Learner to Toilet Ratio in Public Schools,primary,female,21,Laikipia
-Learner to Toilet Ratio in Public Schools,primary,male,26,Laikipia
-Learner to Toilet Ratio in Public Schools,primary,total,29,Laikipia
-Learner to Toilet Ratio in Public Schools,secondary,female,14,Laikipia
-Learner to Toilet Ratio in Public Schools,secondary,male,18,Laikipia
-Learner to Toilet Ratio in Public Schools,secondary,total,16,Laikipia
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,33,Laikipia
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,37,Laikipia
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,35,Laikipia
+Learner to Toilet Ratio in Public Schools ,primary,female,21,Laikipia
+Learner to Toilet Ratio in Public Schools ,primary,male,26,Laikipia
+Learner to Toilet Ratio in Public Schools ,primary,total,29,Laikipia
+Learner to Toilet Ratio in Public Schools ,secondary,female,14,Laikipia
+Learner to Toilet Ratio in Public Schools ,secondary,male,18,Laikipia
+Learner to Toilet Ratio in Public Schools ,secondary,total,16,Laikipia
 county_population,total,female,290317,Laikipia
 county_population,total,male,270906,Laikipia
 county_population,total,total,561223,Laikipia
@@ -936,15 +936,15 @@ Net Enrolment Rate (NER),secondary,total,75.9,Embu
 Primary-to-Secondary Transition Rate,secondary,female,90.2,Embu
 Primary-to-Secondary Transition Rate,secondary,male,89.7,Embu
 Primary-to-Secondary Transition Rate,secondary,total,90,Embu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,17,Embu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,23,Embu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,20,Embu
-Learner to Toilet Ratio in Public Schools,primary,female,16,Embu
-Learner to Toilet Ratio in Public Schools,primary,male,19,Embu
-Learner to Toilet Ratio in Public Schools,primary,total,17.5,Embu
-Learner to Toilet Ratio in Public Schools,secondary,female,13,Embu
-Learner to Toilet Ratio in Public Schools,secondary,male,12,Embu
-Learner to Toilet Ratio in Public Schools,secondary,total,13,Embu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,17,Embu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,23,Embu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,20,Embu
+Learner to Toilet Ratio in Public Schools ,primary,female,16,Embu
+Learner to Toilet Ratio in Public Schools ,primary,male,19,Embu
+Learner to Toilet Ratio in Public Schools ,primary,total,17.5,Embu
+Learner to Toilet Ratio in Public Schools ,secondary,female,13,Embu
+Learner to Toilet Ratio in Public Schools ,secondary,male,12,Embu
+Learner to Toilet Ratio in Public Schools ,secondary,total,13,Embu
 county_population,total,female,328389,Embu
 county_population,total,male,320035,Embu
 county_population,total,total,648425,Embu
@@ -998,15 +998,15 @@ Net Enrolment Rate (NER),secondary,total,37.3,Kajiado
 Primary-to-Secondary Transition Rate,secondary,female,84,Kajiado
 Primary-to-Secondary Transition Rate,secondary,male,84.6,Kajiado
 Primary-to-Secondary Transition Rate,secondary,total,84.3,Kajiado
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,26,Kajiado
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,35,Kajiado
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,31,Kajiado
-Learner to Toilet Ratio in Public Schools,primary,female,37,Kajiado
-Learner to Toilet Ratio in Public Schools,primary,male,45,Kajiado
-Learner to Toilet Ratio in Public Schools,primary,total,41,Kajiado
-Learner to Toilet Ratio in Public Schools,secondary,female,20,Kajiado
-Learner to Toilet Ratio in Public Schools,secondary,male,25,Kajiado
-Learner to Toilet Ratio in Public Schools,secondary,total,23,Kajiado
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,26,Kajiado
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,35,Kajiado
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,31,Kajiado
+Learner to Toilet Ratio in Public Schools ,primary,female,37,Kajiado
+Learner to Toilet Ratio in Public Schools ,primary,male,45,Kajiado
+Learner to Toilet Ratio in Public Schools ,primary,total,41,Kajiado
+Learner to Toilet Ratio in Public Schools ,secondary,female,20,Kajiado
+Learner to Toilet Ratio in Public Schools ,secondary,male,25,Kajiado
+Learner to Toilet Ratio in Public Schools ,secondary,total,23,Kajiado
 county_population,total,female,637480,Kajiado
 county_population,total,male,630782,Kajiado
 county_population,total,total,1268261,Kajiado
@@ -1060,15 +1060,15 @@ Net Enrolment Rate (NER),secondary,total,30.9,Kilifi
 Primary-to-Secondary Transition Rate,secondary,female,80.9,Kilifi
 Primary-to-Secondary Transition Rate,secondary,male,81.9,Kilifi
 Primary-to-Secondary Transition Rate,secondary,total,81.4,Kilifi
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,53,Kilifi
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,59,Kilifi
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,56,Kilifi
-Learner to Toilet Ratio in Public Schools,primary,female,48,Kilifi
-Learner to Toilet Ratio in Public Schools,primary,male,42,Kilifi
-Learner to Toilet Ratio in Public Schools,primary,total,45,Kilifi
-Learner to Toilet Ratio in Public Schools,secondary,female,30,Kilifi
-Learner to Toilet Ratio in Public Schools,secondary,male,33,Kilifi
-Learner to Toilet Ratio in Public Schools,secondary,total,32,Kilifi
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,53,Kilifi
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,59,Kilifi
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,56,Kilifi
+Learner to Toilet Ratio in Public Schools ,primary,female,48,Kilifi
+Learner to Toilet Ratio in Public Schools ,primary,male,42,Kilifi
+Learner to Toilet Ratio in Public Schools ,primary,total,45,Kilifi
+Learner to Toilet Ratio in Public Schools ,secondary,female,30,Kilifi
+Learner to Toilet Ratio in Public Schools ,secondary,male,33,Kilifi
+Learner to Toilet Ratio in Public Schools ,secondary,total,32,Kilifi
 county_population,total,female,793343,Kilifi
 county_population,total,male,783992,Kilifi
 county_population,total,total,1577335,Kilifi
@@ -1122,15 +1122,15 @@ Net Enrolment Rate (NER),secondary,total,26.5,Kwale
 Primary-to-Secondary Transition Rate,secondary,female,79.2,Kwale
 Primary-to-Secondary Transition Rate,secondary,male,79.5,Kwale
 Primary-to-Secondary Transition Rate,secondary,total,79.4,Kwale
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,46,Kwale
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,57,Kwale
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,52,Kwale
-Learner to Toilet Ratio in Public Schools,primary,female,39,Kwale
-Learner to Toilet Ratio in Public Schools,primary,male,48,Kwale
-Learner to Toilet Ratio in Public Schools,primary,total,44,Kwale
-Learner to Toilet Ratio in Public Schools,secondary,female,20,Kwale
-Learner to Toilet Ratio in Public Schools,secondary,male,27,Kwale
-Learner to Toilet Ratio in Public Schools,secondary,total,24,Kwale
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,46,Kwale
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,57,Kwale
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,52,Kwale
+Learner to Toilet Ratio in Public Schools ,primary,female,39,Kwale
+Learner to Toilet Ratio in Public Schools ,primary,male,48,Kwale
+Learner to Toilet Ratio in Public Schools ,primary,total,44,Kwale
+Learner to Toilet Ratio in Public Schools ,secondary,female,20,Kwale
+Learner to Toilet Ratio in Public Schools ,secondary,male,27,Kwale
+Learner to Toilet Ratio in Public Schools ,secondary,total,24,Kwale
 county_population,total,female,476052,Kwale
 county_population,total,male,468412,Kwale
 county_population,total,total,944464,Kwale
@@ -1184,15 +1184,15 @@ Net Enrolment Rate (NER),secondary,total,35.4,Lamu
 Primary-to-Secondary Transition Rate,secondary,female,81.8,Lamu
 Primary-to-Secondary Transition Rate,secondary,male,82.7,Lamu
 Primary-to-Secondary Transition Rate,secondary,total,82.2,Lamu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,56,Lamu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,64,Lamu
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,60,Lamu
-Learner to Toilet Ratio in Public Schools,primary,female,39,Lamu
-Learner to Toilet Ratio in Public Schools,primary,male,40,Lamu
-Learner to Toilet Ratio in Public Schools,primary,total,40,Lamu
-Learner to Toilet Ratio in Public Schools,secondary,female,22,Lamu
-Learner to Toilet Ratio in Public Schools,secondary,male,19,Lamu
-Learner to Toilet Ratio in Public Schools,secondary,total,21,Lamu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,56,Lamu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,64,Lamu
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,60,Lamu
+Learner to Toilet Ratio in Public Schools ,primary,female,39,Lamu
+Learner to Toilet Ratio in Public Schools ,primary,male,40,Lamu
+Learner to Toilet Ratio in Public Schools ,primary,total,40,Lamu
+Learner to Toilet Ratio in Public Schools ,secondary,female,22,Lamu
+Learner to Toilet Ratio in Public Schools ,secondary,male,19,Lamu
+Learner to Toilet Ratio in Public Schools ,secondary,total,21,Lamu
 county_population,total,female,83880,Lamu
 county_population,total,male,83452,Lamu
 county_population,total,total,167332,Lamu
@@ -1246,15 +1246,15 @@ Net Enrolment Rate (NER),secondary,total,33.5,Narok
 Primary-to-Secondary Transition Rate,secondary,female,80,Narok
 Primary-to-Secondary Transition Rate,secondary,male,82.2,Narok
 Primary-to-Secondary Transition Rate,secondary,total,81.1,Narok
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,31,Narok
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,41,Narok
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,36,Narok
-Learner to Toilet Ratio in Public Schools,primary,female,40,Narok
-Learner to Toilet Ratio in Public Schools,primary,male,47,Narok
-Learner to Toilet Ratio in Public Schools,primary,total,43.5,Narok
-Learner to Toilet Ratio in Public Schools,secondary,female,19,Narok
-Learner to Toilet Ratio in Public Schools,secondary,male,22,Narok
-Learner to Toilet Ratio in Public Schools,secondary,total,21,Narok
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,31,Narok
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,41,Narok
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,36,Narok
+Learner to Toilet Ratio in Public Schools ,primary,female,40,Narok
+Learner to Toilet Ratio in Public Schools ,primary,male,47,Narok
+Learner to Toilet Ratio in Public Schools ,primary,total,43.5,Narok
+Learner to Toilet Ratio in Public Schools ,secondary,female,19,Narok
+Learner to Toilet Ratio in Public Schools ,secondary,male,22,Narok
+Learner to Toilet Ratio in Public Schools ,secondary,total,21,Narok
 county_population,total,female,650050,Narok
 county_population,total,male,634154,Narok
 county_population,total,total,1284204,Narok
@@ -1308,15 +1308,15 @@ Net Enrolment Rate (NER),secondary,total,91.6,Nyeri
 Primary-to-Secondary Transition Rate,secondary,female,93.9,Nyeri
 Primary-to-Secondary Transition Rate,secondary,male,93.6,Nyeri
 Primary-to-Secondary Transition Rate,secondary,total,93.7,Nyeri
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,17,Nyeri
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,20,Nyeri
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,19,Nyeri
-Learner to Toilet Ratio in Public Schools,primary,female,13,Nyeri
-Learner to Toilet Ratio in Public Schools,primary,male,17,Nyeri
-Learner to Toilet Ratio in Public Schools,primary,total,15,Nyeri
-Learner to Toilet Ratio in Public Schools,secondary,female,14,Nyeri
-Learner to Toilet Ratio in Public Schools,secondary,male,12,Nyeri
-Learner to Toilet Ratio in Public Schools,secondary,total,13,Nyeri
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,17,Nyeri
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,20,Nyeri
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,19,Nyeri
+Learner to Toilet Ratio in Public Schools ,primary,female,13,Nyeri
+Learner to Toilet Ratio in Public Schools ,primary,male,17,Nyeri
+Learner to Toilet Ratio in Public Schools ,primary,total,15,Nyeri
+Learner to Toilet Ratio in Public Schools ,secondary,female,14,Nyeri
+Learner to Toilet Ratio in Public Schools ,secondary,male,12,Nyeri
+Learner to Toilet Ratio in Public Schools ,secondary,total,13,Nyeri
 county_population,total,female,426118,Nyeri
 county_population,total,male,409290,Nyeri
 county_population,total,total,835408,Nyeri
@@ -1370,15 +1370,15 @@ Net Enrolment Rate (NER),secondary,total,68,Taita Taveta
 Primary-to-Secondary Transition Rate,secondary,female,83.4,Taita Taveta
 Primary-to-Secondary Transition Rate,secondary,male,84.6,Taita Taveta
 Primary-to-Secondary Transition Rate,secondary,total,84,Taita Taveta
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,24,Taita Taveta
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,24,Taita Taveta
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,24,Taita Taveta
-Learner to Toilet Ratio in Public Schools,primary,female,22,Taita Taveta
-Learner to Toilet Ratio in Public Schools,primary,male,28,Taita Taveta
-Learner to Toilet Ratio in Public Schools,primary,total,25,Taita Taveta
-Learner to Toilet Ratio in Public Schools,secondary,female,22,Taita Taveta
-Learner to Toilet Ratio in Public Schools,secondary,male,22,Taita Taveta
-Learner to Toilet Ratio in Public Schools,secondary,total,22,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,24,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,24,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,24,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,primary,female,22,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,primary,male,28,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,primary,total,25,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,secondary,female,22,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,secondary,male,22,Taita Taveta
+Learner to Toilet Ratio in Public Schools ,secondary,total,22,Taita Taveta
 county_population,total,female,184658,Taita Taveta
 county_population,total,male,179331,Taita Taveta
 county_population,total,total,363990,Taita Taveta
@@ -1432,15 +1432,15 @@ Net Enrolment Rate (NER),secondary,total,52.3,West Pokot
 Primary-to-Secondary Transition Rate,secondary,female,80.1,West Pokot
 Primary-to-Secondary Transition Rate,secondary,male,85.1,West Pokot
 Primary-to-Secondary Transition Rate,secondary,total,82,West Pokot
-Learner to Toilet Ratio in Public Schools,preprimary_ece,female,54,West Pokot
-Learner to Toilet Ratio in Public Schools,preprimary_ece,male,58,West Pokot
-Learner to Toilet Ratio in Public Schools,preprimary_ece,total,56,West Pokot
-Learner to Toilet Ratio in Public Schools,primary,female,45,West Pokot
-Learner to Toilet Ratio in Public Schools,primary,male,50,West Pokot
-Learner to Toilet Ratio in Public Schools,primary,total,48,West Pokot
-Learner to Toilet Ratio in Public Schools,secondary,female,18,West Pokot
-Learner to Toilet Ratio in Public Schools,secondary,male,23,West Pokot
-Learner to Toilet Ratio in Public Schools,secondary,total,21,West Pokot
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,female,54,West Pokot
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,male,58,West Pokot
+Learner to Toilet Ratio in Public Schools ,preprimary_ece,total,56,West Pokot
+Learner to Toilet Ratio in Public Schools ,primary,female,45,West Pokot
+Learner to Toilet Ratio in Public Schools ,primary,male,50,West Pokot
+Learner to Toilet Ratio in Public Schools ,primary,total,48,West Pokot
+Learner to Toilet Ratio in Public Schools ,secondary,female,18,West Pokot
+Learner to Toilet Ratio in Public Schools ,secondary,male,23,West Pokot
+Learner to Toilet Ratio in Public Schools ,secondary,total,21,West Pokot
 county_population,total,female,342979,West Pokot
 county_population,total,male,333348,West Pokot
 county_population,total,total,676326,West Pokot
@@ -1459,3 +1459,219 @@ out_of_school_children,secondary,total,13320,West Pokot
 Percentage of Teenage Pregnancy for girls/women aged 15-19 yrs who have ever been pregnant,total,female,0.363,West Pokot
 GBV: Percentage of girls/women who have experienced physical violence since age 15,total,female,0.271,West Pokot
 GBV: Percentage of girls/women aged 15-49 yrs who have ever experienced sexual violence,total,female,0.075,West Pokot
+learner_toilet_ratio_recalculated,preprimary_ece,total,34.380221957336794,Baringo
+learner_toilet_ratio_recalculated,primary,total,29.366164003415467,Baringo
+learner_toilet_ratio_recalculated,secondary,total,18.37000483132725,Baringo
+learner_toilet_ratio_recalculated,preprimary_ece,total,19.65263806463483,Embu
+learner_toilet_ratio_recalculated,primary,total,17.405123643018026,Embu
+learner_toilet_ratio_recalculated,secondary,total,12.466244084755004,Embu
+learner_toilet_ratio_recalculated,preprimary_ece,total,62.17058087035702,Garissa
+learner_toilet_ratio_recalculated,primary,total,41.97569342760323,Garissa
+learner_toilet_ratio_recalculated,secondary,total,24.205510696841937,Garissa
+learner_toilet_ratio_recalculated,preprimary_ece,total,77.02715421851526,Isiolo
+learner_toilet_ratio_recalculated,primary,total,30,Isiolo
+learner_toilet_ratio_recalculated,secondary,total,18.485987649086017,Isiolo
+learner_toilet_ratio_recalculated,preprimary_ece,total,30.061770821932804,Kajiado
+learner_toilet_ratio_recalculated,primary,total,40.674190806427674,Kajiado
+learner_toilet_ratio_recalculated,secondary,total,22.293295427623782,Kajiado
+learner_toilet_ratio_recalculated,preprimary_ece,total,55.86629688155051,Kilifi
+learner_toilet_ratio_recalculated,primary,total,44.752661077879715,Kilifi
+learner_toilet_ratio_recalculated,secondary,total,31.489839304331618,Kilifi
+learner_toilet_ratio_recalculated,preprimary_ece,total,17.894414264595913,Kitui
+learner_toilet_ratio_recalculated,primary,total,16.492389759786057,Kitui
+learner_toilet_ratio_recalculated,secondary,total,15.89786654507349,Kitui
+learner_toilet_ratio_recalculated,preprimary_ece,total,50.99088596519654,Kwale
+learner_toilet_ratio_recalculated,primary,total,43.12337597685151,Kwale
+learner_toilet_ratio_recalculated,secondary,total,22.896662458116353,Kwale
+learner_toilet_ratio_recalculated,preprimary_ece,total,34.935362928661625,Laikipia
+learner_toilet_ratio_recalculated,primary,total,23.310729954942513,Laikipia
+learner_toilet_ratio_recalculated,secondary,total,15.771101209420753,Laikipia
+learner_toilet_ratio_recalculated,preprimary_ece,total,59.891914625170855,Lamu
+learner_toilet_ratio_recalculated,primary,total,39.50605471773934,Lamu
+learner_toilet_ratio_recalculated,secondary,total,20.261194029850746,Lamu
+learner_toilet_ratio_recalculated,preprimary_ece,total,14.957563792507774,Makueni
+learner_toilet_ratio_recalculated,primary,total,22.44572356155689,Makueni
+learner_toilet_ratio_recalculated,secondary,total,17.353292827448694,Makueni
+learner_toilet_ratio_recalculated,preprimary_ece,total,165.7446663922253,Mandera
+learner_toilet_ratio_recalculated,primary,total,79.72806154060731,Mandera
+learner_toilet_ratio_recalculated,secondary,total,27.579241112771182,Mandera
+learner_toilet_ratio_recalculated,preprimary_ece,total,77.49769300426902,Marsabit
+learner_toilet_ratio_recalculated,primary,total,40.89346420526023,Marsabit
+learner_toilet_ratio_recalculated,secondary,total,20.420921622686095,Marsabit
+learner_toilet_ratio_recalculated,preprimary_ece,total,28.332305833604497,Meru
+learner_toilet_ratio_recalculated,primary,total,21.84923604537987,Meru
+learner_toilet_ratio_recalculated,secondary,total,16.302898281220944,Meru
+learner_toilet_ratio_recalculated,preprimary_ece,total,35.34759241524893,Narok
+learner_toilet_ratio_recalculated,primary,total,43.30438396304088,Narok
+learner_toilet_ratio_recalculated,secondary,total,20.53687995259373,Narok
+learner_toilet_ratio_recalculated,preprimary_ece,total,36.810786174461334,National
+learner_toilet_ratio_recalculated,primary,total,31.46104299072659,National
+learner_toilet_ratio_recalculated,secondary,total,19.79971021374014,National
+learner_toilet_ratio_recalculated,preprimary_ece,total,18.420668209287,Nyeri
+learner_toilet_ratio_recalculated,primary,total,14.770023779779516,Nyeri
+learner_toilet_ratio_recalculated,secondary,total,12.92872664831098,Nyeri
+learner_toilet_ratio_recalculated,preprimary_ece,total,79.9312931834588,Samburu
+learner_toilet_ratio_recalculated,primary,total,44.67292013082349,Samburu
+learner_toilet_ratio_recalculated,secondary,total,19.61356651052921,Samburu
+learner_toilet_ratio_recalculated,preprimary_ece,total,24,Taita Taveta
+learner_toilet_ratio_recalculated,primary,total,24.702983090204302,Taita Taveta
+learner_toilet_ratio_recalculated,secondary,total,22,Taita Taveta
+learner_toilet_ratio_recalculated,preprimary_ece,total,93.91505647495724,Tana River
+learner_toilet_ratio_recalculated,primary,total,46.28076632035124,Tana River
+learner_toilet_ratio_recalculated,secondary,total,22.699773666470303,Tana River
+learner_toilet_ratio_recalculated,preprimary_ece,total,14.941116808474671,Tharaka-Nithi
+learner_toilet_ratio_recalculated,primary,total,16.96167447935403,Tharaka-Nithi
+learner_toilet_ratio_recalculated,secondary,total,15.32588024115049,Tharaka-Nithi
+learner_toilet_ratio_recalculated,preprimary_ece,total,181.4976807062876,Turkana
+learner_toilet_ratio_recalculated,primary,total,75.37805990113162,Turkana
+learner_toilet_ratio_recalculated,secondary,total,34.327208796492826,Turkana
+learner_toilet_ratio_recalculated,preprimary_ece,total,124.78322525600706,Wajir
+learner_toilet_ratio_recalculated,primary,total,58.01546608388669,Wajir
+learner_toilet_ratio_recalculated,secondary,total,37.31794948887553,Wajir
+learner_toilet_ratio_recalculated,preprimary_ece,total,55.9245840706162,West Pokot
+learner_toilet_ratio_recalculated,primary,total,47.39145977197185,West Pokot
+learner_toilet_ratio_recalculated,secondary,total,20.33674473349951,West Pokot
+learner_toilet_ratio_recalculated,preprimary_ece,male,57,Kwale
+learner_toilet_ratio_recalculated,preprimary_ece,female,46,Kwale
+learner_toilet_ratio_recalculated,preprimary_ece,male,59,Kilifi
+learner_toilet_ratio_recalculated,preprimary_ece,female,53,Kilifi
+learner_toilet_ratio_recalculated,preprimary_ece,male,100,Tana River
+learner_toilet_ratio_recalculated,preprimary_ece,female,88,Tana River
+learner_toilet_ratio_recalculated,preprimary_ece,male,64,Lamu
+learner_toilet_ratio_recalculated,preprimary_ece,female,56,Lamu
+learner_toilet_ratio_recalculated,preprimary_ece,male,24,Taita Taveta
+learner_toilet_ratio_recalculated,preprimary_ece,female,24,Taita Taveta
+learner_toilet_ratio_recalculated,preprimary_ece,male,68,Garissa
+learner_toilet_ratio_recalculated,preprimary_ece,female,56,Garissa
+learner_toilet_ratio_recalculated,preprimary_ece,male,136,Wajir
+learner_toilet_ratio_recalculated,preprimary_ece,female,113,Wajir
+learner_toilet_ratio_recalculated,preprimary_ece,male,185,Mandera
+learner_toilet_ratio_recalculated,preprimary_ece,female,143,Mandera
+learner_toilet_ratio_recalculated,preprimary_ece,male,76,Marsabit
+learner_toilet_ratio_recalculated,preprimary_ece,female,79,Marsabit
+learner_toilet_ratio_recalculated,preprimary_ece,male,76,Isiolo
+learner_toilet_ratio_recalculated,preprimary_ece,female,78,Isiolo
+learner_toilet_ratio_recalculated,preprimary_ece,male,31,Meru
+learner_toilet_ratio_recalculated,preprimary_ece,female,26,Meru
+learner_toilet_ratio_recalculated,preprimary_ece,male,16,Tharaka-Nithi
+learner_toilet_ratio_recalculated,preprimary_ece,female,14,Tharaka-Nithi
+learner_toilet_ratio_recalculated,preprimary_ece,male,23,Embu
+learner_toilet_ratio_recalculated,preprimary_ece,female,17,Embu
+learner_toilet_ratio_recalculated,preprimary_ece,male,22,Kitui
+learner_toilet_ratio_recalculated,preprimary_ece,female,15,Kitui
+learner_toilet_ratio_recalculated,preprimary_ece,male,16,Makueni
+learner_toilet_ratio_recalculated,preprimary_ece,female,14,Makueni
+learner_toilet_ratio_recalculated,preprimary_ece,male,20,Nyeri
+learner_toilet_ratio_recalculated,preprimary_ece,female,17,Nyeri
+learner_toilet_ratio_recalculated,preprimary_ece,male,187,Turkana
+learner_toilet_ratio_recalculated,preprimary_ece,female,176,Turkana
+learner_toilet_ratio_recalculated,preprimary_ece,male,58,West Pokot
+learner_toilet_ratio_recalculated,preprimary_ece,female,54,West Pokot
+learner_toilet_ratio_recalculated,preprimary_ece,male,85,Samburu
+learner_toilet_ratio_recalculated,preprimary_ece,female,75,Samburu
+learner_toilet_ratio_recalculated,preprimary_ece,male,37,Baringo
+learner_toilet_ratio_recalculated,preprimary_ece,female,32,Baringo
+learner_toilet_ratio_recalculated,preprimary_ece,male,37,Laikipia
+learner_toilet_ratio_recalculated,preprimary_ece,female,33,Laikipia
+learner_toilet_ratio_recalculated,preprimary_ece,male,41,Narok
+learner_toilet_ratio_recalculated,preprimary_ece,female,31,Narok
+learner_toilet_ratio_recalculated,preprimary_ece,male,35,Kajiado
+learner_toilet_ratio_recalculated,preprimary_ece,female,26,Kajiado
+learner_toilet_ratio_recalculated,preprimary_ece,male,40,National
+learner_toilet_ratio_recalculated,preprimary_ece,female,34,National
+learner_toilet_ratio_recalculated,primary,male,48,Kwale
+learner_toilet_ratio_recalculated,primary,female,39,Kwale
+learner_toilet_ratio_recalculated,primary,male,42,Kilifi
+learner_toilet_ratio_recalculated,primary,female,48,Kilifi
+learner_toilet_ratio_recalculated,primary,male,50,Tana River
+learner_toilet_ratio_recalculated,primary,female,43,Tana River
+learner_toilet_ratio_recalculated,primary,male,40,Lamu
+learner_toilet_ratio_recalculated,primary,female,39,Lamu
+learner_toilet_ratio_recalculated,primary,male,28,Taita Taveta
+learner_toilet_ratio_recalculated,primary,female,22,Taita Taveta
+learner_toilet_ratio_recalculated,primary,male,49,Garissa
+learner_toilet_ratio_recalculated,primary,female,35,Garissa
+learner_toilet_ratio_recalculated,primary,male,66,Wajir
+learner_toilet_ratio_recalculated,primary,female,50,Wajir
+learner_toilet_ratio_recalculated,primary,male,94,Mandera
+learner_toilet_ratio_recalculated,primary,female,63,Mandera
+learner_toilet_ratio_recalculated,primary,male,43,Marsabit
+learner_toilet_ratio_recalculated,primary,female,39,Marsabit
+learner_toilet_ratio_recalculated,primary,male,30,Isiolo
+learner_toilet_ratio_recalculated,primary,female,30,Isiolo
+learner_toilet_ratio_recalculated,primary,male,24,Meru
+learner_toilet_ratio_recalculated,primary,female,20,Meru
+learner_toilet_ratio_recalculated,primary,male,18,Tharaka-Nithi
+learner_toilet_ratio_recalculated,primary,female,16,Tharaka-Nithi
+learner_toilet_ratio_recalculated,primary,male,19,Embu
+learner_toilet_ratio_recalculated,primary,female,16,Embu
+learner_toilet_ratio_recalculated,primary,male,13,Kitui
+learner_toilet_ratio_recalculated,primary,female,23,Kitui
+learner_toilet_ratio_recalculated,primary,male,24,Makueni
+learner_toilet_ratio_recalculated,primary,female,21,Makueni
+learner_toilet_ratio_recalculated,primary,male,17,Nyeri
+learner_toilet_ratio_recalculated,primary,female,13,Nyeri
+learner_toilet_ratio_recalculated,primary,male,88,Turkana
+learner_toilet_ratio_recalculated,primary,female,65,Turkana
+learner_toilet_ratio_recalculated,primary,male,50,West Pokot
+learner_toilet_ratio_recalculated,primary,female,45,West Pokot
+learner_toilet_ratio_recalculated,primary,male,50,Samburu
+learner_toilet_ratio_recalculated,primary,female,40,Samburu
+learner_toilet_ratio_recalculated,primary,male,32,Baringo
+learner_toilet_ratio_recalculated,primary,female,27,Baringo
+learner_toilet_ratio_recalculated,primary,male,26,Laikipia
+learner_toilet_ratio_recalculated,primary,female,21,Laikipia
+learner_toilet_ratio_recalculated,primary,male,47,Narok
+learner_toilet_ratio_recalculated,primary,female,40,Narok
+learner_toilet_ratio_recalculated,primary,male,45,Kajiado
+learner_toilet_ratio_recalculated,primary,female,37,Kajiado
+learner_toilet_ratio_recalculated,primary,male,33,National
+learner_toilet_ratio_recalculated,primary,female,30,National
+learner_toilet_ratio_recalculated,secondary,male,27,Kwale
+learner_toilet_ratio_recalculated,secondary,female,20,Kwale
+learner_toilet_ratio_recalculated,secondary,male,33,Kilifi
+learner_toilet_ratio_recalculated,secondary,female,30,Kilifi
+learner_toilet_ratio_recalculated,secondary,male,29,Tana River
+learner_toilet_ratio_recalculated,secondary,female,18,Tana River
+learner_toilet_ratio_recalculated,secondary,male,19,Lamu
+learner_toilet_ratio_recalculated,secondary,female,22,Lamu
+learner_toilet_ratio_recalculated,secondary,male,22,Taita Taveta
+learner_toilet_ratio_recalculated,secondary,female,22,Taita Taveta
+learner_toilet_ratio_recalculated,secondary,male,23,Garissa
+learner_toilet_ratio_recalculated,secondary,female,26,Garissa
+learner_toilet_ratio_recalculated,secondary,male,46,Wajir
+learner_toilet_ratio_recalculated,secondary,female,28,Wajir
+learner_toilet_ratio_recalculated,secondary,male,30,Mandera
+learner_toilet_ratio_recalculated,secondary,female,24,Mandera
+learner_toilet_ratio_recalculated,secondary,male,22,Marsabit
+learner_toilet_ratio_recalculated,secondary,female,19,Marsabit
+learner_toilet_ratio_recalculated,secondary,male,19,Isiolo
+learner_toilet_ratio_recalculated,secondary,female,18,Isiolo
+learner_toilet_ratio_recalculated,secondary,male,18,Meru
+learner_toilet_ratio_recalculated,secondary,female,15,Meru
+learner_toilet_ratio_recalculated,secondary,male,17,Tharaka-Nithi
+learner_toilet_ratio_recalculated,secondary,female,14,Tharaka-Nithi
+learner_toilet_ratio_recalculated,secondary,male,12,Embu
+learner_toilet_ratio_recalculated,secondary,female,13,Embu
+learner_toilet_ratio_recalculated,secondary,male,17,Kitui
+learner_toilet_ratio_recalculated,secondary,female,15,Kitui
+learner_toilet_ratio_recalculated,secondary,male,19,Makueni
+learner_toilet_ratio_recalculated,secondary,female,16,Makueni
+learner_toilet_ratio_recalculated,secondary,male,12,Nyeri
+learner_toilet_ratio_recalculated,secondary,female,14,Nyeri
+learner_toilet_ratio_recalculated,secondary,male,40,Turkana
+learner_toilet_ratio_recalculated,secondary,female,28,Turkana
+learner_toilet_ratio_recalculated,secondary,male,23,West Pokot
+learner_toilet_ratio_recalculated,secondary,female,18,West Pokot
+learner_toilet_ratio_recalculated,secondary,male,21,Samburu
+learner_toilet_ratio_recalculated,secondary,female,18,Samburu
+learner_toilet_ratio_recalculated,secondary,male,20,Baringo
+learner_toilet_ratio_recalculated,secondary,female,17,Baringo
+learner_toilet_ratio_recalculated,secondary,male,18,Laikipia
+learner_toilet_ratio_recalculated,secondary,female,14,Laikipia
+learner_toilet_ratio_recalculated,secondary,male,22,Narok
+learner_toilet_ratio_recalculated,secondary,female,19,Narok
+learner_toilet_ratio_recalculated,secondary,male,25,Kajiado
+learner_toilet_ratio_recalculated,secondary,female,20,Kajiado
+learner_toilet_ratio_recalculated,secondary,male,22,National
+learner_toilet_ratio_recalculated,secondary,female,18,National

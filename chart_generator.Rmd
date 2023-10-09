@@ -99,8 +99,7 @@ pcode1_shape <-
 
 asal_county_list <- read_csv("./data/counties.csv") %>%  
   mutate(county = recode(county, 
-                         "national" = "National",
-                         "Tharaka Nithi" = "Tharaka-Nithi")) %>% 
+                         "national" = "National")) %>% 
   distinct(county) %>% pull()
 
 counties <- read_csv("./data/counties.csv") %>% 
