@@ -142,11 +142,41 @@ counties %>% count(indicator)
 ```
 
 ```{r}
-counties 
-  group_by(sub_indicator) %>% 
-  summarise(mean = mean(value, na.rm = TRUE))
+counties %>% 
+  filter(indicator %in% c("county_population", "school_age_children") & 
+           sex_modifier == "total") %>% 
+  select(-sub_indicator) %>% 
+  pivot_wider(names_from = indicator, 
+              values_from = value) %>% 
+  mutate(value = 
+           (school_age_children / county_population * 100)) %>% 
+  mutate(indicator = "percentage_of_population_school_age",
+         sub_indicator = indicator) %>% 
+  select(-county_population, -school_age_children)
 
 
+
+```
+
+```{r}
+counties %>% count(indicator)
+
+counties %>% filter(indicator %in% c("school_age_children")) %>%
+  select(-sub_indicator) %>% 
+  pivot_wider(names_from = sex_modifier, 
+              values_from = value) %>% 
+  mutate(female_pc = female / total * 100, 
+         male_pc = male / total  * 100)
+
+counties %>% glimpse()
+
+counties %>% select(county, sub_indicator, value) %>% 
+  pivot_wider(names_from = sub_indicator, 
+              values_from = value) %>% 
+  janitor::clean_names() %>%
+  write_csv("./data/counties_flat.csv")
+
+glimpse()
 ```
 
 
