@@ -1,0 +1,116 @@
+indicator,age_modifier,sex_modifier,value,county,sub_indicator
+county_population,TOTAL,FEMALE,529230,Makueni,County population total female
+county_population,TOTAL,MALE,513070,Makueni,County population total male
+county_population,TOTAL,TOTAL,1042300,Makueni,County population total total
+county_population,TOTAL,FEMALE,469826,Mandera,County population total female
+county_population,TOTAL,MALE,489410,Mandera,County population total male
+county_population,TOTAL,TOTAL,959236,Mandera,County population total total
+county_population,TOTAL,FEMALE,259237,Marsabit,County population total female
+county_population,TOTAL,MALE,256056,Marsabit,County population total male
+county_population,TOTAL,TOTAL,515292,Marsabit,County population total total
+county_population,TOTAL,FEMALE,817774,Meru,County population total female
+county_population,TOTAL,MALE,808208,Meru,County population total male
+county_population,TOTAL,TOTAL,1625982,Meru,County population total total
+county_population,TOTAL,FEMALE,175936,Samburu,County population total female
+county_population,TOTAL,MALE,172362,Samburu,County population total male
+county_population,TOTAL,TOTAL,348298,Samburu,County population total total
+county_population,TOTAL,FEMALE,178288,Tana River,County population total female
+county_population,TOTAL,MALE,174260,Tana River,County population total male
+county_population,TOTAL,TOTAL,352549,Tana River,County population total total
+county_population,TOTAL,FEMALE,211732,Tharaka-Nithi,County population total female
+county_population,TOTAL,MALE,204652,Tharaka-Nithi,County population total male
+county_population,TOTAL,TOTAL,416383,Tharaka-Nithi,County population total total
+county_population,TOTAL,FEMALE,517384,Turkana,County population total female
+county_population,TOTAL,MALE,505390,Turkana,County population total male
+county_population,TOTAL,TOTAL,1022773,Turkana,County population total total
+county_population,TOTAL,FEMALE,438918,Wajir,County population total female
+county_population,TOTAL,MALE,431718,Wajir,County population total male
+county_population,TOTAL,TOTAL,870636,Wajir,County population total total
+county_population,TOTAL,FEMALE,371883,Baringo,County population total female
+county_population,TOTAL,MALE,361450,Baringo,County population total male
+county_population,TOTAL,TOTAL,733333,Baringo,County population total total
+county_population,TOTAL,FEMALE,468506,Garissa,County population total female
+county_population,TOTAL,MALE,458525,Garissa,County population total male
+county_population,TOTAL,TOTAL,927031,Garissa,County population total total
+county_population,TOTAL,FEMALE,161431,Isiolo,County population total female
+county_population,TOTAL,MALE,154506,Isiolo,County population total male
+county_population,TOTAL,TOTAL,315937,Isiolo,County population total total
+county_population,TOTAL,FEMALE,626579,Kitui,County population total female
+county_population,TOTAL,MALE,603211,Kitui,County population total male
+county_population,TOTAL,TOTAL,1229790,Kitui,County population total total
+county_population,TOTAL,FEMALE,290317,Laikipia,County population total female
+county_population,TOTAL,MALE,270906,Laikipia,County population total male
+county_population,TOTAL,TOTAL,561223,Laikipia,County population total total
+county_population,TOTAL,FEMALE,328389,Embu,County population total female
+county_population,TOTAL,MALE,320035,Embu,County population total male
+county_population,TOTAL,TOTAL,648425,Embu,County population total total
+county_population,TOTAL,FEMALE,637480,Kajiado,County population total female
+county_population,TOTAL,MALE,630782,Kajiado,County population total male
+county_population,TOTAL,TOTAL,1268261,Kajiado,County population total total
+county_population,TOTAL,FEMALE,793343,Kilifi,County population total female
+county_population,TOTAL,MALE,783992,Kilifi,County population total male
+county_population,TOTAL,TOTAL,1577335,Kilifi,County population total total
+county_population,TOTAL,FEMALE,476052,Kwale,County population total female
+county_population,TOTAL,MALE,468412,Kwale,County population total male
+county_population,TOTAL,TOTAL,944464,Kwale,County population total total
+county_population,TOTAL,FEMALE,83880,Lamu,County population total female
+county_population,TOTAL,MALE,83452,Lamu,County population total male
+county_population,TOTAL,TOTAL,167332,Lamu,County population total total
+county_population,TOTAL,FEMALE,650050,Narok,County population total female
+county_population,TOTAL,MALE,634154,Narok,County population total male
+county_population,TOTAL,TOTAL,1284204,Narok,County population total total
+county_population,TOTAL,FEMALE,426118,Nyeri,County population total female
+county_population,TOTAL,MALE,409290,Nyeri,County population total male
+county_population,TOTAL,TOTAL,835408,Nyeri,County population total total
+county_population,TOTAL,FEMALE,184658,Taita Taveta,County population total female
+county_population,TOTAL,MALE,179331,Taita Taveta,County population total male
+county_population,TOTAL,TOTAL,363990,Taita Taveta,County population total total
+county_population,TOTAL,FEMALE,342979,West Pokot,County population total female
+county_population,TOTAL,MALE,333348,West Pokot,County population total male
+county_population,TOTAL,TOTAL,676326,West Pokot,County population total total
+county_population,TOTAL,FEMALE,50.78,Makueni,County population total female %
+county_population,TOTAL,MALE,49.22,Makueni,County population total male % 
+county_population,TOTAL,FEMALE,48.98,Mandera,County population total female %
+county_population,TOTAL,MALE,51.02,Mandera,County population total male % 
+county_population,TOTAL,FEMALE,50.31,Marsabit,County population total female %
+county_population,TOTAL,MALE,49.69,Marsabit,County population total male % 
+county_population,TOTAL,FEMALE,50.29,Meru,County population total female %
+county_population,TOTAL,MALE,49.71,Meru,County population total male % 
+county_population,TOTAL,FEMALE,50.51,Samburu,County population total female %
+county_population,TOTAL,MALE,49.49,Samburu,County population total male % 
+county_population,TOTAL,FEMALE,50.57,Tana River,County population total female %
+county_population,TOTAL,MALE,49.43,Tana River,County population total male % 
+county_population,TOTAL,FEMALE,50.85,Tharaka-Nithi,County population total female %
+county_population,TOTAL,MALE,49.15,Tharaka-Nithi,County population total male % 
+county_population,TOTAL,FEMALE,50.59,Turkana,County population total female %
+county_population,TOTAL,MALE,49.41,Turkana,County population total male % 
+county_population,TOTAL,FEMALE,50.41,Wajir,County population total female %
+county_population,TOTAL,MALE,49.59,Wajir,County population total male % 
+county_population,TOTAL,FEMALE,50.71,Baringo,County population total female %
+county_population,TOTAL,MALE,49.29,Baringo,County population total male % 
+county_population,TOTAL,FEMALE,50.54,Garissa,County population total female %
+county_population,TOTAL,MALE,49.46,Garissa,County population total male % 
+county_population,TOTAL,FEMALE,51.1,Isiolo,County population total female %
+county_population,TOTAL,MALE,48.9,Isiolo,County population total male % 
+county_population,TOTAL,FEMALE,50.95,Kitui,County population total female %
+county_population,TOTAL,MALE,49.05,Kitui,County population total male % 
+county_population,TOTAL,FEMALE,51.73,Laikipia,County population total female %
+county_population,TOTAL,MALE,48.27,Laikipia,County population total male % 
+county_population,TOTAL,FEMALE,50.64,Embu,County population total female %
+county_population,TOTAL,MALE,49.36,Embu,County population total male % 
+county_population,TOTAL,FEMALE,50.26,Kajiado,County population total female %
+county_population,TOTAL,MALE,49.74,Kajiado,County population total male % 
+county_population,TOTAL,FEMALE,50.3,Kilifi,County population total female %
+county_population,TOTAL,MALE,49.7,Kilifi,County population total male % 
+county_population,TOTAL,FEMALE,50.4,Kwale,County population total female %
+county_population,TOTAL,MALE,49.6,Kwale,County population total male % 
+county_population,TOTAL,FEMALE,50.13,Lamu,County population total female %
+county_population,TOTAL,MALE,49.87,Lamu,County population total male % 
+county_population,TOTAL,FEMALE,50.62,Narok,County population total female %
+county_population,TOTAL,MALE,49.38,Narok,County population total male % 
+county_population,TOTAL,FEMALE,51.01,Nyeri,County population total female %
+county_population,TOTAL,MALE,48.99,Nyeri,County population total male % 
+county_population,TOTAL,FEMALE,50.73,Taita Taveta,County population total female %
+county_population,TOTAL,MALE,49.27,Taita Taveta,County population total male % 
+county_population,TOTAL,FEMALE,50.71,West Pokot,County population total female %
+county_population,TOTAL,MALE,49.29,West Pokot,County population total male % 
