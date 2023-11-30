@@ -137,7 +137,6 @@ counties %>%
        y = "", 
        title = paste0(sub_indicator))
 
-counties %>% count(indicator)
   
 ```
 
