@@ -11,8 +11,8 @@
 "0","counties <- read_csv(""./data/counties.csv"") %>% "
 "0","  mutate(sex_modifier = fct_relevel(sex_modifier, c(""male"", ""female"", ""total"")), "
 "0","         county = recode(county, ""national"" = ""National""))"
-"2","[1mRows: [22m[34m902[39m [1mColumns: [22m[34m5[39m"
-"2","[36m--[39m [1mColumn specification[22m [36m-------------------------------------------------------------------------------------[39m
+"2","[1mRows: [22m[34m1676[39m [1mColumns: [22m[34m5[39m"
+"2","[36m--[39m [1mColumn specification[22m [36m-------------------------------------------------------------[39m
 [1mDelimiter:[22m "",""
 [31mchr[39m (4): indicator, age_modifier, sex_modifier, county
 [32mdbl[39m (1): value"

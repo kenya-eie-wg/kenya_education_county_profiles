@@ -79,6 +79,11 @@ counties <- read_csv("./data/counties.csv") %>%
 
 ```
 
+```{r}
+counties %>% count(indicator)
+```
+
+
 
 
 
